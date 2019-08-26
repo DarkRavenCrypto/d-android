@@ -94,22 +94,31 @@ public class BRApiManager {
         }
         Set<CurrencyEntity> set = new LinkedHashSet<>();
         try {
-            JSONArray arr = fetchRates(context);
+            JSONArray arr       = fetchRates(context);
             updateFeePerKb(context);
+            // Get the json response string from CMC
+            String cmcString    = urlGET(context, "https://api.coinmarketcap.com/v1/ticker/native-coin/");
+            // convert the string to an array object
+            JSONArray cmcArr    = new JSONArray(cmcString);
+            // grab the 0'th element (only one is returned)
+            JSONObject cmcObj   = (JSONObject) cmcArr.get(0);
+            // get the usd exchange ration as a float
+            float cmcUSD        = (float) cmcObj.getDouble("price_usd");
             if (arr != null) {
                 int length = arr.length();
                 for (int i = 1; i < length; i++) {
                     CurrencyEntity tmp = new CurrencyEntity();
                     try {
-                        JSONObject tmpObj = (JSONObject) arr.get(i);
-                        tmp.name = tmpObj.getString("name");
-                        tmp.code = tmpObj.getString("code");
-                        tmp.rate = (float) tmpObj.getDouble("rate");
-                        String selectedISO = BRSharedPrefs.getIso(context);
-//                        Log.e(TAG,"selectedISO: " + selectedISO);
+                        JSONObject tmpObj   = (JSONObject) arr.get(i);
+                        tmp.name            = tmpObj.getString("name");
+                        tmp.code            = tmpObj.getString("code");
+                        if (tmp.code.equalsIgnoreCase("USD")) {
+                            tmp.rate        = cmcUSD;
+                        } else {
+                            tmp.rate        = (float) tmpObj.getDouble("rate");
+                        }
+                        String selectedISO  = BRSharedPrefs.getIso(context);
                         if (tmp.code.equalsIgnoreCase(selectedISO)) {
-//                            Log.e(TAG, "theIso : " + theIso);
-//                                Log.e(TAG, "Putting the shit in the shared preffs");
                             BRSharedPrefs.putIso(context, tmp.code);
                             BRSharedPrefs.putCurrencyListPosition(context, i - 1);
                         }
