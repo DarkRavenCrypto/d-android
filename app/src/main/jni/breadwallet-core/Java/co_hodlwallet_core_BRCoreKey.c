@@ -466,7 +466,8 @@ Java_co_hodlwallet_core_BRCoreKey_address
     BRKey *key = (BRKey *) getJNIReference(env, thisObject);
 
     BRAddress address = BR_ADDRESS_NONE;
-    BRKeyAddress (key, address.s, sizeof(address));
+    // BRKeyAddress (key, address.s, sizeof(address));
+    BRKeyLegacyAddr (key, address.s, sizeof(address));
     assert(address.s[0] != '\0');
 
     return (*env)->NewStringUTF(env, address.s);

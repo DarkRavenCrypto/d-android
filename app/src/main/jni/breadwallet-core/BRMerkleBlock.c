@@ -32,7 +32,7 @@
 #include <assert.h>
 
 #define MAX_PROOF_OF_WORK 0x1e0ffff0    // highest value for difficulty target (higher values are less difficult)
-#define TARGET_TIMESPAN   (60) // the targeted timespan between difficulty target adjustments
+#define TARGET_TIMESPAN   (14*24*60*60) // the targeted timespan between difficulty target adjustments
 
 inline static int _ceil_log2(int x) {
     int r = (x & (x - 1)) ? 1 : 0;
@@ -76,7 +76,6 @@ BRMerkleBlock *BRMerkleBlockNew(void) {
     BRMerkleBlock *block = calloc(1, sizeof(*block));
 
     assert(block != NULL);
-
     block->height = BLOCK_UNKNOWN_HEIGHT;
     return block;
 }
@@ -114,14 +113,12 @@ BRMerkleBlock *BRMerkleBlockParse(const uint8_t *buf, size_t bufLen) {
         off += sizeof(uint32_t);
         block->nonce = UInt32GetLE(&buf[off]);
         off += sizeof(uint32_t);
-
-        if (block->version == 5) {
+        if ( block->version > 4 ) {
             block->nAccumulatorCheckpoint = UInt256Get(&buf[off]);
-            if (bufLen == 81)
-                bufLen += sizeof(uint32_t);
             off += sizeof(UInt256);
+//            if (bufLen == 81)
+//                bufLen += sizeof(UInt256);
         }
-
         if (off + sizeof(uint32_t) <= bufLen) {
             block->totalTx = UInt32GetLE(&buf[off]);
             off += sizeof(uint32_t);
@@ -137,11 +134,11 @@ BRMerkleBlock *BRMerkleBlockParse(const uint8_t *buf, size_t bufLen) {
             block->flags = (off + len <= bufLen) ? malloc(len) : NULL;
             if (block->flags) memcpy(block->flags, &buf[off], len);
         }
-
-        if (block->version == 5) {
-            BRSHA256_2(&block->blockHash, buf,112);
-        } else {
-            BRQuark(buf, &block->blockHash);
+        if ( block->version < 4 ) {
+            BRQuark(buf, &block->blockHash);       // hash function for block hash
+        }
+        else {
+            BRSHA256_2(&block->blockHash, buf, 112);     // 80 + Uint256 nAccumulatorCheckpoint
         }
     }
 
@@ -172,7 +169,10 @@ size_t BRMerkleBlockSerialize(const BRMerkleBlock *block, uint8_t *buf, size_t b
         off += sizeof(uint32_t);
         UInt32SetLE(&buf[off], block->nonce);
         off += sizeof(uint32_t);
-
+        if ( block->version > 3 ) {
+            UInt256Set(&buf[off], block->nAccumulatorCheckpoint);
+            off += sizeof(UInt256);
+        }
         if (block->totalTx > 0) {
             UInt32SetLE(&buf[off], block->totalTx);
             off += sizeof(uint32_t);
@@ -282,7 +282,7 @@ int BRMerkleBlockIsValid(const BRMerkleBlock *block, uint32_t currentTime) {
     if (block->timestamp > currentTime + BLOCK_MAX_TIME_DRIFT) r = 0;
 
     // check if proof-of-work target is out of range
-    //if (target == 0 || (block->target & 0x00800000) || block->target > MAX_PROOF_OF_WORK) r = 0;
+//    if (target == 0 || (block->target & 0x00800000) || block->target > MAX_PROOF_OF_WORK) r = 0;
 
     if (size > 3) UInt32SetLE(&t.u8[size - 3], target);
     else UInt32SetLE(t.u8, target >> (3 - size)*8);

@@ -199,7 +199,7 @@ void BRSHA256_2(void *md32, const void *data, size_t dataLen) {
     BRSHA256(md32, t, sizeof(t));
 }
 void BRQuark(const char* input, char* output) {
-    quark_hash(input, output);
+quark_hash(input, output);
 }
 
 // bitwise right rotation

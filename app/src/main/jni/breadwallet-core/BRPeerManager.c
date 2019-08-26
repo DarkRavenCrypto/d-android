@@ -1060,21 +1060,23 @@ static int _BRPeerManagerVerifyBlock(BRPeerManager *manager, BRMerkleBlock *bloc
     }
 
     // verify block difficulty
-    // if (r && ! manager->params->verifyDifficulty(block, manager->blocks)) {
-    //     peer_log(peer, "relayed block with invalid difficulty target %x, blockHash: %s", block->target,
-    //              u256hex(block->blockHash));
-    //     r = 0;
-    // }
+    //Skip DGW3 diff checks on dogec
+//    if (r && ! manager->params->verifyDifficulty(block, manager->blocks)) {
+//        peer_log(peer, "relayed block with invalid difficulty target %x, blockHash: %s", block->target,
+//                 u256hex(block->blockHash));
+//        r = 0;
+//    }
 
-//  if (r) {
-//      BRMerkleBlock *checkpoint = BRSetGet(manager->checkpoints, block);
-//      // verify blockchain checkpoints
-//      if (checkpoint && ! BRMerkleBlockEq(block, checkpoint)) {
-//          peer_log(peer, "relayed a block that differs from the checkpoint at height %"PRIu32", blockHash: %s, "
-//                   "expected: %s", block->height, u256hex(block->blockHash), u256hex(checkpoint->blockHash));
-//          r = 0;
-//      }
-//  }
+    if (r) {
+        BRMerkleBlock *checkpoint = BRSetGet(manager->checkpoints, block);
+
+        // verify blockchain checkpoints
+        if (checkpoint && ! BRMerkleBlockEq(block, checkpoint)) {
+            peer_log(peer, "relayed a block that differs from the checkpoint at height %"PRIu32", blockHash: %s, "
+                     "expected: %s", block->height, u256hex(block->blockHash), u256hex(checkpoint->blockHash));
+            r = 0;
+        }
+    }
 
     return r;
 }
@@ -1144,7 +1146,8 @@ static void _peerRelayedBlock(void *info, BRMerkleBlock *block) {
         if (block->timestamp + 7*24*60*60 < time(NULL)) { // ignore orphans older than one week ago
             BRMerkleBlockFree(block);
             block = NULL;
-        } else {
+        }
+        else {
             // call getblocks, unless we already did with the previous block, or we're still syncing
             if (manager->lastBlock->height >= BRPeerLastBlock(peer) &&
                     (! manager->lastOrphan || ! UInt256Eq(manager->lastOrphan->blockHash, block->prevBlock))) {
@@ -1159,12 +1162,8 @@ static void _peerRelayedBlock(void *info, BRMerkleBlock *block) {
             BRSetAdd(manager->orphans, block); // BUG: limit total orphans to avoid memory exhaustion attack
             manager->lastOrphan = block;
         }
-    } else if (! _BRPeerManagerVerifyBlock(manager, block, prev, peer)) { // block is invalid
-        peer_log(peer, "relayed invalid block");
-        BRMerkleBlockFree(block);
-        block = NULL;
-        _BRPeerManagerPeerMisbehavin(manager, peer);
-    } else if (UInt256Eq(block->prevBlock, manager->lastBlock->blockHash)) { // new block extends main chain
+    }
+    else if (UInt256Eq(block->prevBlock, manager->lastBlock->blockHash)) { // new block extends main chain
         if ((block->height % 500) == 0 || txCount > 0 || block->height >= BRPeerLastBlock(peer)) {
             peer_log(peer, "adding block #%"PRIu32", false positive rate: %f", block->height, manager->fpRate);
         }
@@ -1212,11 +1211,11 @@ static void _peerRelayedBlock(void *info, BRMerkleBlock *block) {
         peer_log(peer, "marking new block #%"PRIu32" as orphan until rescan completes", block->height);
         BRSetAdd(manager->orphans, block); // mark as orphan til we're caught up
         manager->lastOrphan = block;
-//  } else if (block->height <= manager->params->checkpoints[manager->params->checkpointsCount - 1].height) { // old fork
-//      peer_log(peer, "ignoring block on fork older than most recent checkpoint, block #%"PRIu32", hash: %s",
-//               block->height, u256hex(block->blockHash));
-//      BRMerkleBlockFree(block);
-//      block = NULL;
+    } else if (block->height <= manager->params->checkpoints[manager->params->checkpointsCount - 1].height) { // old fork
+        peer_log(peer, "ignoring block on fork older than most recent checkpoint, block #%"PRIu32", hash: %s",
+                 block->height, u256hex(block->blockHash));
+        BRMerkleBlockFree(block);
+        block = NULL;
     } else { // new block is on a fork
         peer_log(peer, "chain fork reached height %"PRIu32, block->height);
         BRSetAdd(manager->blocks, block);
@@ -1437,9 +1436,6 @@ BRPeerManager *BRPeerManagerNew(BRWallet *wallet, uint32_t earliestKeyTime,
     for (size_t i = 0; blocks && i < blocksCount; i++) {
         assert(blocks[i]->height != BLOCK_UNKNOWN_HEIGHT); // height must be saved/restored along with serialized block
         BRSetAdd(manager->orphans, blocks[i]);
-
-        if ((blocks[i]->height % BLOCK_DIFFICULTY_INTERVAL) == 0 &&
-                (! block || blocks[i]->height > block->height)) block = blocks[i]; // find last transition block
     }
 
     while (block) {

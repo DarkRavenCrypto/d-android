@@ -188,6 +188,10 @@ void quark_hash(const char* input, char* output)
         sph_jh512 (&ctx_jh, hashB, 64); //7
         sph_jh512_close(&ctx_jh, hashA); //8
     }
-    
+
+
+
     memcpy(output, hashA, 32);
+
 }
+

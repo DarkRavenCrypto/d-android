@@ -38,20 +38,20 @@ extern "C" {
 #define BLOCK_MAX_TIME_DRIFT      (2*60*60) // the furthest in the future a block is allowed to be timestamped
 
 typedef struct {
-    UInt256     blockHash;
-    uint32_t    version;
-    UInt256     prevBlock;
-    UInt256     merkleRoot;
-    uint32_t    timestamp;              // time interval since unix epoch
-    uint32_t    target;
-    uint32_t    nonce;
-    UInt256     nAccumulatorCheckpoint; // PIVX Header extra
-    uint32_t    totalTx;
-    UInt256     *hashes;
-    size_t      hashesCount;
-    uint8_t     *flags;
-    size_t      flagsLen;
-    uint32_t    height;
+    UInt256 blockHash;
+    uint32_t version;
+    UInt256 prevBlock;
+    UInt256 merkleRoot;
+    uint32_t timestamp; // time interval since unix epoch
+    uint32_t target;
+    uint32_t nonce;
+    UInt256 nAccumulatorCheckpoint;//PIVX Header extra
+    uint32_t totalTx;
+    UInt256 *hashes;
+    size_t hashesCount;
+    uint8_t *flags;
+    size_t flagsLen;
+    uint32_t height;
 } BRMerkleBlock;
 
 #define BR_MERKLE_BLOCK_NONE ((const BRMerkleBlock) { UINT256_ZERO, 0, UINT256_ZERO, UINT256_ZERO, 0, 0, 0, 0, NULL, 0,\

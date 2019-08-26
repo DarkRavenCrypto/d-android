@@ -27,10 +27,9 @@
 #include <string.h>
 #include <assert.h>
 
-#define BIP32_SEED_KEY "NativeCoin seed"
-#define BIP32_XPRV     "\x17\x5D\x15\xA3"
-#define BIP32_XPUB     "\x04\xD1\xC1\x1B"
-
+#define BIP32_SEED_KEY "DogeCash seed"
+#define BIP32_XPRV     "\x04\x88\xAD\xE4"
+#define BIP32_XPUB     "\x04\x88\xB2\x1E"
 
 // BIP32 is a scheme for deriving chains of addresses from a seed value
 // https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki

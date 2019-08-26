@@ -41,10 +41,12 @@ static jfieldID getJNIReferenceField (
 static jlong getJNIReferenceAddress (
     JNIEnv *env,
     jobject thisObject) {
-    jfieldID coreBRKeyAddressField = getJNIReferenceField(env, thisObject);
-    assert (NULL != coreBRKeyAddressField);
-
-    return (*env)->GetLongField (env, thisObject, coreBRKeyAddressField);
+    // jfieldID coreBRKeyAddressField = getJNIReferenceField(env, thisObject);
+    jfieldID coreBRKeyLegacyAddrField = getJNIReferenceField(env, thisObject);
+    // assert (NULL != coreBRKeyAddressField);
+    assert (NULL != coreBRKeyLegacyAddrField);
+    // return (*env)->GetLongField (env, thisObject, coreBRKeyAddressField);
+    return (*env)->GetLongField (env, thisObject, coreBRKeyLegacyAddrField);
 }
 
 extern void *getJNIReference (

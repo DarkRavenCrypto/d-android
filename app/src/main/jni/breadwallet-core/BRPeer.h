@@ -57,8 +57,8 @@ extern "C" {
 #define SERVICES_NODE_WITNESS 0x08 // BIP144: https://github.com/bitcoin/bips/blob/master/bip-0144.mediawiki
 #define SERVICES_NODE_BCASH   0x20 // https://github.com/Bitcoin-UAHF/spec/blob/master/uahf-technical-spec.md
 
-#define BR_VERSION "1.0.0.0"
-#define USER_AGENT "/NativeMobile: " BR_VERSION "/"
+#define BR_VERSION "0.2"
+#define USER_AGENT "/dogecwallet:" BR_VERSION "/"
 
 // explanation of message types at: https://en.bitcoin.it/wiki/Protocol_specification
 #define MSG_VERSION     "version"
