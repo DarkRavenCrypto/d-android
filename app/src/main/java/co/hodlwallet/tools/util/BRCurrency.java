@@ -66,13 +66,21 @@ public class BRCurrency {
         }
 
         if (isoCurrencyCode != "N8V" || (isoCurrencyCode == "N8V" && BRSharedPrefs.getCurrencyUnit(app) == BRConstants.CURRENT_UNIT_BITCOINS)) {
-            decimalFormatSymbols.setCurrencySymbol(symbol);
+            if (symbol == "N8V") {
+                decimalFormatSymbols.setCurrencySymbol("");
+            } else {
+                decimalFormatSymbols.setCurrencySymbol(symbol);
+            }
             currencyFormat.setGroupingUsed(true);
             currencyFormat.setMaximumFractionDigits(BRSharedPrefs.getCurrencyUnit(app) == BRConstants.CURRENT_UNIT_BITCOINS ? 8 : 2);
             currencyFormat.setDecimalFormatSymbols(decimalFormatSymbols);
             currencyFormat.setNegativePrefix(decimalFormatSymbols.getCurrencySymbol() + "-");
             currencyFormat.setNegativeSuffix("");
-            return currencyFormat.format(amount.doubleValue());
+            if (symbol == "N8V") {
+                return String.format("%s %s", currencyFormat.format(amount.doubleValue()), BRConstants.bitcoinUppercase);  
+            } else {
+                return currencyFormat.format(amount.doubleValue());
+            }
         } else {
             // In order for satoshi to look good we cannot put SAT at the beginning of the number.
             // instead, we put it at the end.
