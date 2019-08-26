@@ -5,21 +5,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_intro_set_pit"
     android:layout_width="match_parent"
-    android:background="@color/gray_background"
+    android:background="@drawable/backgroundflat"
     android:layout_height="match_parent"
     tools:context="co.hodlwallet.presenter.activities.SetPinActivity">
 
     <co.hodlwallet.presenter.customviews.BRText
-        app:customTFont="Electrolize-Regular.ttf"
         android:id="@+id/title"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_margin="@dimen/bread_margin"
+        android:layout_marginLeft="16dp"
         android:text="Settings"
         android:textColor="@color/white"
         android:textSize="@dimen/header"
+        android:paddingTop="20dp"
+        app:customTFont="Electrolize-Regular.ttf"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_margin="@dimen/bread_margin"/>
+        tools:layout_editor_absoluteY="46dp"
+        tools:ignore="MissingConstraints" />
 
     <ListView
         android:id="@+id/settings_list"
@@ -28,7 +32,9 @@
         android:background="@color/gray_background"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="32dp"
+        android:alpha="0.65"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/title"

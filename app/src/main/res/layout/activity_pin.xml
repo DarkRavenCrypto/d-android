@@ -6,19 +6,19 @@
     android:id="@+id/activity_pit"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/gray_background"
+    android:background="@drawable/backgroundflat"
     tools:context="co.hodlwallet.presenter.activities.LoginActivity">
 
     <ImageView
         android:id="@+id/title"
-        android:layout_width="256dp"
-        android:layout_height="128dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="16dp"
+        android:layout_width="305dp"
+        android:layout_height="225dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
         android:gravity="center_horizontal"
-        android:src="@drawable/hodl_logo_white"
+        android:src="@drawable/splash"
         android:textColor="@color/white"
         android:textSize="48sp"
         app:customTFont="Electrolize-Regular.ttf"
@@ -28,7 +28,8 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttons_layout"
-        app:layout_constraintVertical_bias="0.120000005"/>
+        app:layout_constraintVertical_bias="0.120000005"
+        tools:layout_editor_absoluteX="46dp" />
 
     <LinearLayout
         android:id="@+id/pinLayout"
@@ -84,8 +85,11 @@
         android:id="@+id/brkeyboard"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:background="@android:color/transparent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:showAlphabet="true"/>
+        app:showAlphabet="true"
+        tools:layout_editor_absoluteX="0dp" />
 
     <co.hodlwallet.presenter.customviews.BRText
         android:id="@+id/enter_pin_label"
@@ -104,14 +108,12 @@
         android:id="@+id/buttons_layout"
         android:layout_width="0dp"
         android:layout_height="40dp"
-        android:layout_marginEnd="25dp"
         android:layout_marginLeft="16dp"
+        android:layout_marginTop="36dp"
         android:layout_marginRight="16dp"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="24dp"
         android:orientation="horizontal"
         android:weightSum="2.0"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -120,44 +122,40 @@
             android:id="@+id/left_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
             android:drawableTop="@drawable/ic_receive_tab_icon"
             android:gravity="center"
-            android:background="@android:color/transparent"
-            android:paddingBottom="0dp"
             android:paddingTop="8dp"
-            app:layout_constraintLeft_toLeftOf="parent"
+            android:paddingBottom="0dp"
             app:customBFont="Electrolize-Regular.ttf"
             app:isBreadButton="false"
-            />
+            app:layout_constraintLeft_toLeftOf="parent" />
 
         <co.hodlwallet.presenter.customviews.BRButton
             android:id="@+id/right_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:drawableTop="@drawable/ic_send_tab_icon"
             android:background="@android:color/transparent"
-            android:paddingBottom="0dp"
+            android:drawableTop="@drawable/ic_send_tab_icon"
             android:paddingTop="8dp"
-            app:layout_constraintRight_toRightOf="parent"
+            android:paddingBottom="0dp"
             app:customBFont="Electrolize-Regular.ttf"
             app:isBreadButton="false"
-            />
+            app:layout_constraintRight_toRightOf="parent" />
     </android.support.constraint.ConstraintLayout>
 
     <ImageView
         android:id="@+id/unlocked_image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="0dp"
-        android:layout_marginLeft="0dp"
-        android:layout_marginRight="0dp"
-        android:layout_marginTop="0dp"
         android:alpha="0"
         android:src="@drawable/ic_unlock"
         app:layout_constraintBottom_toBottomOf="@+id/brkeyboard"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.445" />
 
     <co.hodlwallet.presenter.customviews.BRText
         android:id="@+id/unlocked_text"

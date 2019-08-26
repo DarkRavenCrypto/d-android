@@ -6,7 +6,7 @@
     android:id="@+id/activity_write_down"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/gray_background"
+    android:background="@drawable/backgroundflat"
     tools:context="co.hodlwallet.presenter.activities.intro.WriteDownActivity">
 
     <android.support.constraint.ConstraintLayout
@@ -62,7 +62,7 @@
             android:layout_marginRight="32dp"
             android:layout_marginStart="32dp"
             android:layout_marginTop="0dp"
-            android:layout_weight="0.5"
+            android:layout_weight="0.8"
             android:lineSpacingMultiplier="1.3"
             android:text="@string/WritePaperPhrase.instruction"
             android:textAlignment="center"

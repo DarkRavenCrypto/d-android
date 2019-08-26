@@ -6,7 +6,7 @@
     android:id="@+id/activity_intro_recover"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/gray_background"
+    android:background="@drawable/backgroundflat"
     tools:context="co.hodlwallet.presenter.activities.intro.RecoverActivity">
 
     <co.hodlwallet.presenter.customviews.BRButton
@@ -74,7 +74,7 @@
         android:id="@+id/relativeLayout"
         android:layout_width="0dp"
         android:layout_height="200dp"
-        android:background="@color/gray_background"
+        android:layout_marginTop="16dp"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -88,14 +88,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_marginEnd="16dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="32dp"
+            android:layout_marginEnd="16dp"
             android:text="@string/Settings.wipe"
             android:textColor="@color/white"
             android:textSize="16sp"
             app:customTFont="Electrolize-Regular.ttf"
-            tools:layout_constraintTop_creator="1"/>
+            tools:layout_constraintTop_creator="1" />
 
         <ImageView
             android:id="@+id/imageView10"
@@ -103,7 +103,7 @@
             android:layout_height="160dp"
             android:layout_below="@+id/textView2"
             android:layout_centerHorizontal="true"
-            android:src="@drawable/ic_recover_wallet_illustration"/>
+            android:src="@drawable/ic_recover_wallet_illustration" />
 
         <ImageButton
             android:id="@+id/faq_button"
@@ -113,18 +113,18 @@
             android:layout_alignParentEnd="true"
             android:layout_marginEnd="15dp"
             android:background="@drawable/ic_faq"
-            android:scaleType="centerCrop"/>
+            android:scaleType="centerCrop" />
 
         <ImageButton
             android:id="@+id/close_button"
             android:layout_width="32dp"
             android:layout_height="32dp"
+            android:layout_alignTop="@+id/textView2"
             android:layout_alignBottom="@+id/textView2"
             android:layout_alignParentStart="true"
-            android:layout_alignTop="@+id/textView2"
             android:layout_marginStart="16dp"
             android:background="@android:color/transparent"
-            android:src="@drawable/ic_close_yellow_24dp"/>
+            android:src="@drawable/ic_close_yellow_24dp" />
 
     </RelativeLayout>
 

@@ -6,7 +6,7 @@
     android:id="@+id/activity_intro_recover"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/gray_background"
+    android:background="@drawable/backgroundflat"
     tools:context="co.hodlwallet.presenter.activities.intro.RecoverActivity">
 
     <co.hodlwallet.presenter.customviews.BRButton
@@ -65,15 +65,30 @@
         app:layout_constraintLeft_toLeftOf="@+id/textView8"
         app:layout_constraintTop_toBottomOf="@+id/textView8"/>
 
+    <co.hodlwallet.presenter.customviews.BRText
+        android:id="@+id/textView9"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:lineSpacingMultiplier="1.3"
+        android:layout_marginTop="16dp"
+        android:textColor="@color/logo_gradient_start"
+        android:textSize="@dimen/paragraph"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/relativeLayout"/>
+
     <RelativeLayout
         android:id="@+id/relativeLayout"
         android:layout_width="0dp"
         android:layout_height="200dp"
-        android:background="@color/gray_background"
         app:layout_constraintBaseline_toBaselineOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView9"
         tools:layout_constraintBaseline_creator="1"
         tools:layout_constraintLeft_creator="1"
         tools:layout_constraintRight_creator="1">
@@ -88,7 +103,7 @@
             android:textColor="@color/white"
             android:textSize="@dimen/header"
             app:customTFont="Electrolize-Regular.ttf"
-            tools:layout_constraintTop_creator="1"/>
+            tools:layout_constraintTop_creator="1" />
 
         <ImageButton
             android:id="@+id/close_button"
@@ -97,7 +112,7 @@
             android:layout_margin="@dimen/bread_margin"
             android:background="@drawable/ic_close_yellow_24dp"
             tools:layout_editor_absoluteX="0dp"
-            tools:layout_editor_absoluteY="81dp"/>
+            tools:layout_editor_absoluteY="81dp" />
 
 
         <ImageButton
@@ -108,7 +123,7 @@
             android:layout_margin="@dimen/bread_margin"
             android:background="@drawable/ic_faq"
             tools:layout_editor_absoluteX="0dp"
-            tools:layout_editor_absoluteY="81dp"/>
+            tools:layout_editor_absoluteY="81dp" />
 
         <ImageView
             android:id="@+id/imageView9"
@@ -117,7 +132,7 @@
             android:layout_below="@+id/textView2"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="@dimen/bread_margin"
-            android:src="@drawable/ic_import_illustration"/>
+            android:src="@drawable/ic_import_illustration" />
 
     </RelativeLayout>
 

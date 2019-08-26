@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources>
   <!-- App name -->
-  <string name="About.appName.android">HODL</string>
+  <string name="About.appName.android">NativeMobile</string>
   <!-- About screen blog label -->
   <string name="About.blog">Blog</string>
   <!-- About screen footer -->
-  <string name="About.footer">Made by the HODL community. Version %1$s</string>
+  <string name="About.footer">NativeCoin Mobile Wallet. Version %1$s</string>
   <!-- Privay Policy button label -->
   <string name="About.privacy">Privacy Policy</string>
   <!-- About screen reddit label -->
@@ -23,13 +23,13 @@
   <!-- Loading Wallet Message -->
   <string name="Account.loadingMessage">Loading Wallet</string>
   <!-- Default wallet name -->
-  <string name="AccountHeader.defaultWalletName">My HODL</string>
+  <string name="AccountHeader.defaultWalletName">NativeMobile</string>
   <!-- Third party keyboard warning -->
   <string name="Alert.customKeyboard.android">It looks like you are using a third-party keyboard, which can record what you type and steal your Backup Recover Key. Please switch to the default Android keyboard for extra protection.</string>
   <!-- Error alert title -->
   <string name="Alert.error">Error</string>
   <!-- Keystore error -->
-  <string name="Alert.keystore.generic.android">There is a problem with your Android OS keystore, please contact support@hodlwallet.co</string>
+  <string name="Alert.keystore.generic.android">There is a problem with your Android OS keystore, please contact support@n8vcoin.io</string>
   <!-- KeyStore error, keys are invalidated -->
   <string name="Alert.keystore.invalidated.android">Your wallet encrypted data was recently invalidated because your Android lock screen was disabled.</string>
   <!-- Keystore error title -->
@@ -65,29 +65,29 @@
   <!-- API Token error message -->
   <string name="ApiClient.tokenError">Unable to retrieve API token</string>
   <!-- Send BCH view body. -->
-  <string name="BCH.body">Enter a destination BCH address below. All BCH in your wallet at the time of the fork (%1$s) will be sent.</string>
+  <string name="BCH.body">Enter a destination N8V address below. All N8V in your wallet at the time of the fork (%1$s) will be sent.</string>
   <!-- Confirm sending <$5.00> to <address>? -->
   <string name="BCH.confirmationMessage">Confirm sending %1$s to %2$s</string>
   <!-- Confirmation alert title -->
   <string name="BCH.confirmationTitle">Confirmation</string>
   <!-- Generic bch erorr message -->
-  <string name="BCH.genericError">Your account does not contain any BCH, or you received BCH after the fork.</string>
+  <string name="BCH.genericError">Your account does not contain any N8V, or you received N8V after the fork.</string>
   <!-- Transaction ID copied message -->
   <string name="BCH.hashCopiedMessage">Transaction ID copied</string>
   <!-- No address error message -->
   <string name="BCH.noAddressError">Please enter an address</string>
   <!-- Attempted to scan unsupported qr code error message. -->
-  <string name="BCH.paymentProtocolError">Payment Protocol Requests are not supported for BCH transactions</string>
+  <string name="BCH.paymentProtocolError">Payment Protocol Requests are not supported for N8V transactions</string>
   <!-- BCH successfully sent alert message -->
-  <string name="BCH.successMessage">BCH was successfully sent.</string>
+  <string name="BCH.successMessage">N8V was successfully sent.</string>
   <!-- Widthdraw BCH view title -->
-  <string name="BCH.title">Withdraw BCH</string>
+  <string name="BCH.title">Withdraw N8V</string>
   <!-- Tx Hash button header -->
-  <string name="BCH.txHashHeader">BCH Transaction ID</string>
+  <string name="BCH.txHashHeader">N8V Transaction ID</string>
   <!-- Approve button label -->
   <string name="BitID.approve">Approve</string>
   <!-- <sitename> is requesting authentication using your bitcoin wallet -->
-  <string name="BitID.authenticationRequest">%1$s is requesting authentication using your bitcoin wallet</string>
+  <string name="BitID.authenticationRequest">%1$s is requesting authentication using your NativeCoin wallet</string>
   <!-- Deny button label -->
   <string name="BitID.deny">Deny</string>
   <!-- BitID error alert title -->
@@ -139,7 +139,7 @@
   <!-- Word label eg. Word #1, Word #2 -->
   <string name="ConfirmPaperPhrase.word">Word #%1$s</string>
   <!-- Bitcoin denomination picker label -->
-  <string name="DefaultCurrency.bitcoinLabel">Bitcoin Display Unit</string>
+  <string name="DefaultCurrency.bitcoinLabel">NativeCoin Display Unit</string>
   <!-- Exchange rate label -->
   <string name="DefaultCurrency.rateLabel">Exchange Rate</string>
   <!-- Email unavailable alert title -->
@@ -147,7 +147,7 @@
   <!-- Email unavailable alert title -->
   <string name="ErrorMessages.emailUnavailableTitle">Email Unavailable</string>
   <!-- Message that gets shown when we've detected the user has encountered the looping lock-screen bug. (preserve [ ] characters) -->
-  <string name="ErrorMessages.loopingLockScreen.android">HODL can not be authenticated due to a bug in your version of Android. [Please tap here for more information.]</string>
+  <string name="ErrorMessages.loopingLockScreen.android">NativeMobile can not be authenticated due to a bug in your version of Android. [Please tap here for more information.]</string>
   <!-- Messaging unavailable alert title -->
   <string name="ErrorMessages.messagingUnavailableMessage">This device isn\'t configured to send messages.</string>
   <!-- Messaging unavailable alert title -->
@@ -165,7 +165,7 @@
   <!-- Regular fee -->
   <string name="FeeSelector.regular">Regular</string>
   <!-- E.g. [This transaction is predicted to complete in] 10-60 minutes -->
-  <string name="FeeSelector.regularTime">10-60 minutes</string>
+  <string name="FeeSelector.regularTime">2-4 minutes</string>
   <!-- Transaction Fee title -->
   <string name="FeeSelector.transactionFee">Transaction Fee</string>
   <!-- Estimated Confirmation Title-->
@@ -189,7 +189,7 @@
   <!-- Checking private key balance progress view text -->
   <string name="Import.checking">Checking private key balance...</string>
   <!-- Sweep private key confirmation message -->
-  <string name="Import.confirm">Send %1$s from this private key into your wallet? The bitcoin network will receive a fee of %2$s.</string>
+  <string name="Import.confirm">Send %1$s from this private key into your wallet? The NativeCoin network will receive a fee of %2$s.</string>
   <!-- Duplicate key error message -->
   <string name="Import.Error.duplicate">This private key is already in your wallet.</string>
   <!-- empty private key error message -->
@@ -207,13 +207,13 @@
   <!-- Caption for graphics -->
   <string name="Import.leftCaption">Wallet to be imported</string>
   <!-- Import wallet intro screen message -->
-  <string name="Import.message">Sweeping a private key transfers all the bitcoin from your private key into your Hodl wallet using a single transaction.</string>
+  <string name="Import.message">Sweeping a private key transfers all the NativeCoin from your private key into your NativeMobile wallet using a single transaction.</string>
   <!-- Enter password alert view title -->
   <string name="Import.password">This private key is password protected.</string>
   <!-- password textfield placeholder -->
   <string name="Import.passwordPlaceholder">password</string>
   <!-- Caption for graphics -->
-  <string name="Import.rightCaption">Your HODL Wallet</string>
+  <string name="Import.rightCaption">Your NativeMobile Wallet</string>
   <!-- Scan Private key button label -->
   <string name="Import.scan">Scan Private Key</string>
   <!-- Import wallet success alert title -->
@@ -233,15 +233,15 @@
   <!-- Ignore jailbreak warning button -->
   <string name="JailbreakWarnings.ignore">Ignore</string>
   <!-- Jailbreak warning message -->
-  <string name="JailbreakWarnings.messageWithBalance">DEVICE SECURITY COMPROMISED\n Any \'jailbreak\' app can access HODL\'s keychain data and steal your bitcoin! Wipe this wallet immediately and restore on a secure device.</string>
+  <string name="JailbreakWarnings.messageWithBalance">DEVICE SECURITY COMPROMISED\n Any \'jailbreak\' app can access NativeMobile\'s keychain data and steal your NativeCoin! Wipe this wallet immediately and restore on a secure device.</string>
   <!-- Jailbreak warning message -->
-  <string name="JailbreakWarnings.messageWithoutBalance">DEVICE SECURITY COMPROMISED\n Any \'jailbreak\' app can access HODL\'s keychain data and steal your bitcoin. Please only use HODL Wallet on a non-jailbroken device.</string>
+  <string name="JailbreakWarnings.messageWithoutBalance">DEVICE SECURITY COMPROMISED\n Any \'jailbreak\' app can access NativeMobile\'s keychain data and steal your NativeCoin. Please only use NativeMobile Wallet on a non-jailbroken device.</string>
   <!-- Jailbreak warning title -->
   <string name="JailbreakWarnings.title">WARNING</string>
   <!-- Location services disabled error -->
   <string name="LocationPlugin.disabled">Location services are disabled.</string>
   <!-- No permissions for location services -->
-  <string name="LocationPlugin.notAuthorized">HODL does not have permission to access location services.</string>
+  <string name="LocationPlugin.notAuthorized">NativeMobile does not have permission to access location services.</string>
   <!-- Wallet creation date prefix -->
   <string name="ManageWallet.creationDatePrefix">You created your wallet on %1$s</string>
   <!-- Manage wallet description text -->
@@ -251,7 +251,7 @@
   <!-- Manage wallet modal title -->
   <string name="ManageWallet.title">Manage Wallet</string>
   <!-- Buy bitcoin title -->
-  <string name="MenuButton.buy">Buy Bitcoin</string>
+  <string name="MenuButton.buy">Buy NativeCoin</string>
   <!-- Menu button title -->
   <string name="MenuButton.lock">Lock Wallet</string>
   <!-- Menu button title -->
@@ -283,7 +283,7 @@
   <!-- Node status label -->
   <string name="NodeSelector.statusLabel">Node Connection Status</string>
   <!-- Node Selector view title -->
-  <string name="NodeSelector.title">Bitcoin Nodes</string>
+  <string name="NodeSelector.title">NativeCoin Nodes</string>
   <!-- Bad Payment request alert title -->
   <string name="PaymentProtocol.Errors.badPaymentRequest">Bad Payment Request</string>
   <!-- Error opening payment protocol file message -->
@@ -295,9 +295,9 @@
   <!-- Payment too small alert title -->
   <string name="PaymentProtocol.Errors.smallOutputError">Couldn\'t make payment</string>
   <!-- Amount too small error message -->
-  <string name="PaymentProtocol.Errors.smallPayment">Bitcoin payments can\'t be less than %1$s.</string>
+  <string name="PaymentProtocol.Errors.smallPayment">NativeCoin payments can\'t be less than %1$s.</string>
   <!-- Output too small error message. -->
-  <string name="PaymentProtocol.Errors.smallTransaction">Bitcoin transaction outputs can\'t be less than %1$s.</string>
+  <string name="PaymentProtocol.Errors.smallTransaction">NativeCoin transaction outputs can\'t be less than %1$s.</string>
   <!-- Unsupported signature type payment protocol error message -->
   <string name="PaymentProtocol.Errors.unsupportedSignatureType">unsupported signature type</string>
   <!-- Untrusted certificate payment protocol error message -->
@@ -319,7 +319,7 @@
   <!-- Transaction rejected prompt title -->
   <string name="Prompts.RecommendRescan.title">Transaction Rejected</string>
   <!-- Share data prompt body -->
-  <string name="Prompts.ShareData.body">Help improve HODL by sharing your anonymous data with us</string>
+  <string name="Prompts.ShareData.body">Help improve NativeMobile by sharing your anonymous data with us</string>
   <!-- Share data prompt title -->
   <string name="Prompts.ShareData.title">Share Anonymous Data</string>
   <!-- Enable touch ID prompt body -->
@@ -333,11 +333,11 @@
   <!-- Button on fingerprint prompt so the user can enter their PIN instead -->
   <string name="Prompts.TouchId.usePin.android">PIN</string>
   <!-- Upgrade PIN prompt body. -->
-  <string name="Prompts.UpgradePin.body">HODL Wallet has upgraded to using a 6-digit PIN. Tap here to upgrade.</string>
+  <string name="Prompts.UpgradePin.body">NativeMobile Wallet has upgraded to using a 6-digit PIN. Tap here to upgrade.</string>
   <!-- Upgrade PIN prompt title. -->
   <string name="Prompts.UpgradePin.title">Upgrade PIN</string>
   <!-- Notifications will be added later but users can set their preferences now, which is why we specify "in the future". -->
-  <string name="PushNotifications.body">Turn on notifications to receive special messages from HODL in the future.</string>
+  <string name="PushNotifications.body">Turn on notifications to receive special messages from NativeMobile in the future.</string>
   <!-- Push notifications toggle switch label -->
   <string name="PushNotifications.label">Push Notifications</string>
   <!-- Push notifications are off label -->
@@ -393,9 +393,9 @@
   <!-- Alert message title -->
   <string name="ReScan.alertTitle">Sync with Blockchain?</string>
   <!-- extimated time -->
-  <string name="ReScan.body1">20-45 minutes</string>
+  <string name="ReScan.body1">3-5 minutes</string>
   <!-- Syncing explanation -->
-  <string name="ReScan.body2">If a transaction shows as completed on the bitcoin network but not in your wallet.</string>
+  <string name="ReScan.body2">If a transaction shows as completed on the NativeCoin network but not in your wallet.</string>
   <!-- Syncing explanation -->
   <string name="ReScan.body3">You repeatedly get an error saying your transaction was rejected.</string>
   <!-- Start Sync button label -->
@@ -421,7 +421,7 @@
   <!-- Security Center Info -->
   <string name="SecurityCenter.info">Enable all security features for maximum protection.</string>
   <!-- Paper Key button description -->
-  <string name="SecurityCenter.paperKeyDescription">The only way to access your bitcoin if you lose or upgrade your phone.</string>
+  <string name="SecurityCenter.paperKeyDescription">The only way to access your NativeCoin if you lose or upgrade your phone.</string>
   <!-- Paper Key button title -->
   <string name="SecurityCenter.paperKeyTitle">Backup Recovery Key</string>
   <!-- PIN button description -->
@@ -441,15 +441,15 @@
   <!-- Balance: $4.00 -->
   <string name="Send.balance">Balance: %1$s</string>
   <!-- Instructions how to allow the camera access for the app -->
-  <string name="Send.cameraUnavailabeMessage.android">Allow camera access in \"Settings\" &gt; \"Apps\" &gt; \"HODL\" &gt; \"Permissions\"</string>
-  <string name="Simplex.allowFileSystemAccess">Please allow Storage permission in \"Settings\" &gt; \"Apps\" &gt; \"HODL\" &gt; \"Permissions\"</string>
+  <string name="Send.cameraUnavailabeMessage.android">Allow camera access in \"Settings\" &gt; \"Apps\" &gt; \"NativeMobile\" &gt; \"Permissions\"</string>
+  <string name="Simplex.allowFileSystemAccess">Please allow Storage permission in \"Settings\" &gt; \"Apps\" &gt; \"NativeMobile\" &gt; \"Permissions\"</string>
 
   <!-- Permission required to access camera -->
-  <string name="Send.cameraUnavailabeTitle.android">HODL is not allowed to access the camera</string>
+  <string name="Send.cameraUnavailabeTitle.android">NativeMobile is not allowed to access the camera</string>
   <!-- Camera not allowed message -->
   <string name="Send.cameraunavailableMessage">Go to Settings to allow camera access.</string>
   <!-- Camera not allowed alert title -->
-  <string name="Send.cameraUnavailableTitle">HODL is not allowed to access the camera</string>
+  <string name="Send.cameraUnavailableTitle">NativeMobile is not allowed to access the camera</string>
   <!-- Warning when sending to self. -->
   <string name="Send.containsAddress">The destination is your own address. You cannot send to yourself.</string>
   <!-- Could not create transaction alert title -->
@@ -463,9 +463,9 @@
   <!-- Payee identity not certified alert title. -->
   <string name="Send.identityNotCertified">Payee identity isn\'t certified.</string>
   <!-- Invalid address alert message -->
-  <string name="Send.invalidAddressMessage">The destination address is not a valid bitcoin address.</string>
+  <string name="Send.invalidAddressMessage">The destination address is not a valid NativeCoin address.</string>
   <!-- Invalid address on pasteboard message -->
-  <string name="Send.invalidAddressOnPasteboard">Pasteboard does not contain a valid bitcoin address.</string>
+  <string name="Send.invalidAddressOnPasteboard">Pasteboard does not contain a valid NativeCoin address.</string>
   <!-- Invalid address alert title -->
   <string name="Send.invalidAddressTitle">Invalid Address</string>
   <!-- Is rescanning error message -->
@@ -491,7 +491,7 @@
   <!-- Send money to label -->
   <string name="Send.toLabel">To</string>
   <!-- Adress already used alert message - first part -->
-  <string name="Send.UsedAddress.firstLine">Bitcoin addresses are intended for single use only.</string>
+  <string name="Send.UsedAddress.firstLine">NativeCoin addresses are intended for single use only.</string>
   <!-- Adress already used alert message - second part -->
   <string name="Send.UsedAddress.secondLIne">Re-use reduces privacy for both you and the recipient and can result in loss if the recipient doesn\'t directly control the address.</string>
   <!-- Adress already used alert title -->
@@ -505,7 +505,7 @@
   <!-- Join Early access label -->
   <string name="Settings.earlyAccess">Join Early Access</string>
   <!-- Are you enjoying brd alert message body -->
-  <string name="Settings.enjoying">Are you enjoying HODL Wallet?</string>
+  <string name="Settings.enjoying">Are you enjoying NativeMobile Wallet?</string>
   <!-- Import wallet label -->
   <string name="Settings.importTitle">Sweep Private Key</string>
   <!-- Manage settings section header -->
@@ -533,7 +533,7 @@
   <!-- Get a legacy address menu label. -->
   <string name="Settings.legacyAddressTitle">Legacy Address</string>
   <!-- Share data view body -->
-  <string name="ShareData.body">Help improve HODL Wallet by sharing your anonymous data with us. This does not include any financial information. We respect your financial privacy.</string>
+  <string name="ShareData.body">Help improve NativeMobile Wallet by sharing your anonymous data with us. This does not include any financial information. We respect your financial privacy.</string>
   <!-- Share data header -->
   <string name="ShareData.header">Share Data?</string>
   <!-- Share data switch label. -->
@@ -547,7 +547,7 @@
   <!-- Argument is date -->
   <string name="StartPaperPhrase.date">You last wrote down your backup recovery key on %1$s</string>
   <!-- Start view message -->
-  <string name="StartViewController.message">The easy and secure way to use bitcoin.</string>
+  <string name="StartViewController.message">The easy and secure way to use NativeCoin.</string>
   <!-- Syncing view connectiong state header text -->
   <string name="SyncingView.connecting">Connecting</string>
   <!-- Syncing view header text -->
@@ -579,7 +579,7 @@
   <!-- Spending Limit: b100,000 ($100) -->
   <string name="TouchIdSettings.spendingLimit">Spending limit: %1$s (%2$s)</string>
   <!-- Touch id switch label. -->
-  <string name="TouchIdSettings.switchLabel">Enable Touch ID for HODL</string>
+  <string name="TouchIdSettings.switchLabel">Enable Touch ID for NativeMobile</string>
   <!-- Enable fingerprint for this wallet called HODL -->
   <string name="TouchIdSettings.switchLabel.android">Enable Fingerprint Authentication</string>
   <!-- Touch ID settings view title -->
@@ -629,7 +629,7 @@
   <!-- eg. Starting balance: $50.00 -->
   <string name="Transaction.starting">Starting balance: %1$s</string>
   <!-- Waiting to be confirmed string -->
-  <string name="Transaction.waiting">Waiting to be confirmed. Some merchants require confirmation to complete a transaction. Estimated time: 1-2 hours.</string>
+  <string name="Transaction.waiting">Waiting to be confirmed. Some merchants require confirmation to complete a transaction. Estimated time: 3-5 minutes.</string>
   <!-- e.g. I received money from an account. -->
   <string name="TransactionDetails.account">account</string>
   <!-- Amount section header -->
@@ -665,7 +665,7 @@
   <!-- "Sent [$5] to [address]" => This is the "to [address]" part. -->
   <string name="TransactionDetails.to">to %1$s</string>
   <!-- Transaction ID header -->
-  <string name="TransactionDetails.txHashHeader">Bitcoin Transaction ID</string>
+  <string name="TransactionDetails.txHashHeader">NativeCoin Transaction ID</string>
   <!-- (this transaction was) Received at this address: -->
   <string name="TransactionDirection.address">Received at this Address</string>
   <!-- (this transaction was) Sent to this address: -->
@@ -693,7 +693,7 @@
   <!-- Wallet unlocked message -->
   <string name="UnlockScreen.unlocked">Wallet Unlocked</string>
   <!-- Update PIN caption text -->
-  <string name="UpdatePin.caption">Remember this PIN. If you forget it, you won\'t be able to access your bitcoin.</string>
+  <string name="UpdatePin.caption">Remember this PIN. If you forget it, you won\'t be able to access your NativeCoin.</string>
   <!-- PIN creation info. -->
   <string name="UpdatePin.createInstruction">Your PIN will be used to unlock your wallet and send money.</string>
   <!-- Update PIN title -->
@@ -729,7 +729,7 @@
   <!-- Authorize transaction with touch id message -->
   <string name="VerifyPin.touchIdMessage">Authorize this transaction</string>
   <!-- 'No wallet' warning for watch app -->
-  <string name="Watch.noWalletWarning">Open the HODL Wallet iPhone app to set up your wallet.</string>
+  <string name="Watch.noWalletWarning">Open the NativeMobile Wallet iPhone app to set up your wallet.</string>
   <!-- Dismiss button label -->
   <string name="Webview.dismiss">Dismiss</string>
   <!-- Webview loading error message -->
@@ -737,13 +737,13 @@
   <!-- Updating webview message -->
   <string name="Webview.updating">Updating...</string>
   <!-- Welcome screen text. (?) will be replaced with the help icon users should look for. -->
-  <string name="Welcome.body">HODLwallet has changed its name to HODL, with a brand new look and some new features.\n\nIf you need help, look for the (?) in the top right of most screens.</string>
+  <string name="Welcome.body">NativeMobile has changed its name to NativeMobile, with a brand new look and some new features.\n\nIf you need help, look for the (?) in the top right of most screens.</string>
   <!-- Top title of welcome screen -->
-  <string name="Welcome.title">Welcome to HODL Wallet!</string>
+  <string name="Welcome.title">Welcome to\nNativeMobile\nWallet!</string>
   <!-- Top title of segwit popup -->
-  <string name="Segwit.title">HODL Wallet has Upgraded!</string>
+  <string name="Segwit.title">NativeMobile Wallet has Upgraded!</string>
   <!-- Message of segwit popup -->
-  <string name="Segwit.message">HODL Wallet has upgraded to the newest Bitcoin address standard. This gives you the added benefit of saving on transaction fees and being compatible with the latest standards of the Bitcoin Network. You don\'t have to do anything different and the only thing you\'ll notice is your addresses have changed and now begin with "btc".\n\nYour money is safe and still stored on your Backup Recovery Key.\n\nSince this change is still taking effect across the Bitcoin Network, some services may not be ready to send to this new address type. If you encounter this you can still access the old addresses that begin with \"1\" via: Settings/ Wallet/ Show Legacy Address</string>
+  <string name="Segwit.message">NativeMobile Wallet has upgraded to the newest NativeCoin address standard. This gives you the added benefit of saving on transaction fees and being compatible with the latest standards of the NativeCoin Network. You don\'t have to do anything different and the only thing you\'ll notice is your addresses have changed and now begin with "n8v".\n\nYour money is safe and still stored on your Backup Recovery Key.\n\nSince this change is still taking effect across the NativeCoin Network, some services may not be ready to send to this new address type. If you encounter this you can still access the old addresses that begin with \"N\" via: Settings/ Wallet/ Show Legacy Address</string>
   <!-- Wipe wallet alert message -->
   <string name="WipeWallet.alertMessage">Are you sure you want to delete this wallet?</string>
   <!-- Wipe wallet alert title -->
@@ -755,7 +755,7 @@
   <!-- Enter phrase to wipe wallet instruction. -->
   <string name="WipeWallet.instruction">To start a new wallet or restore an existing wallet, you must first erase the wallet that is currently installed. To continue, enter the current wallet\'s Backup Recovery Key.</string>
   <!-- Start wipe wallet view message -->
-  <string name="WipeWallet.startMessage">Starting or recovering another wallet allows you to access and manage a different Hodl wallet on this device.</string>
+  <string name="WipeWallet.startMessage">Starting or recovering another wallet allows you to access and manage a different NativeCoin wallet on this device.</string>
   <!-- Start wipe wallet view warning -->
   <string name="WipeWallet.startWarning">Your current wallet will be removed from this device. If you wish to restore it in the future, you will need to enter your Backup Recovery Key.</string>
   <!-- Wipe wallet navigation item title. -->
