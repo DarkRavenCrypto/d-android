@@ -98,32 +98,32 @@ public class FragmentRequestAmount extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_receive, container, false);
-        backgroundLayout = (LinearLayout) rootView.findViewById(R.id.background_layout);
-        signalLayout = (LinearLayout) rootView.findViewById(R.id.signal_layout);
-        copiedLayout = (BRLinearLayoutWithCaret) rootView.findViewById(R.id.copied_layout);
-        request = (Button) rootView.findViewById(R.id.request_button);
-        keyboardLayout = (LinearLayout) rootView.findViewById(R.id.keyboard_layout);
+        View rootView       = inflater.inflate(R.layout.fragment_receive, container, false);
+        backgroundLayout    = (LinearLayout)    rootView.findViewById(R.id.background_layout);
+        signalLayout        = (LinearLayout)    rootView.findViewById(R.id.signal_layout);
+        copiedLayout        = (BRLinearLayoutWithCaret) rootView.findViewById(R.id.copied_layout);
+        request             = (Button)          rootView.findViewById(R.id.request_button);
+        keyboardLayout      = (LinearLayout)    rootView.findViewById(R.id.keyboard_layout);
         keyboardLayout.setVisibility(View.VISIBLE);
-        amountLayout = (RelativeLayout) rootView.findViewById(R.id.amount_layout);
+        amountLayout        = (RelativeLayout)  rootView.findViewById(R.id.amount_layout);
         amountLayout.setVisibility(View.VISIBLE);
-        keyboard = (BRKeyboard) rootView.findViewById(R.id.keyboard);
+        keyboard            = (BRKeyboard)      rootView.findViewById(R.id.keyboard);
         keyboard.setBRButtonBackgroundResId(R.drawable.keyboard_dark_button);
         keyboard.setBRKeyboardColor(R.color.gray_background);
-        isoText = (TextView) rootView.findViewById(R.id.iso_text);
-        amountEdit = (EditText) rootView.findViewById(R.id.amount_edit);
-        amountBuilder = new StringBuilder(0);
-        isoButton = (ImageButton) rootView.findViewById(R.id.iso_button);
-        isoButtonText = (TextView) rootView.findViewById(R.id.iso_button_text);
-        mTitle = (TextView) rootView.findViewById(R.id.title);
-        mAddress = (TextView) rootView.findViewById(R.id.address_text);
-        mQrImage = (ImageView) rootView.findViewById(R.id.qr_image);
-        shareButton = (BRButton) rootView.findViewById(R.id.share_button);
-        close = (ImageButton) rootView.findViewById(R.id.close_button);
-        keyboardIndex = signalLayout.indexOfChild(keyboardLayout);
-        receiveAddress = getArguments().getString("address");
+        isoText             = (TextView)        rootView.findViewById(R.id.iso_text);
+        amountEdit          = (EditText)        rootView.findViewById(R.id.amount_edit);
+        amountBuilder       = new StringBuilder(0);
+        isoButton           = (ImageButton)     rootView.findViewById(R.id.iso_button);
+        isoButtonText       = (TextView)        rootView.findViewById(R.id.iso_button_text);
+        mTitle              = (TextView)        rootView.findViewById(R.id.title);
+        mAddress            = (TextView)        rootView.findViewById(R.id.address_text);
+        mQrImage            = (ImageView)       rootView.findViewById(R.id.qr_image);
+        shareButton         = (BRButton)        rootView.findViewById(R.id.share_button);
+        close               = (ImageButton)     rootView.findViewById(R.id.close_button);
+        keyboardIndex       = signalLayout.indexOfChild(keyboardLayout);
+        receiveAddress      = getArguments().getString("address");
 
-        ImageButton faq = (ImageButton) rootView.findViewById(R.id.faq_button);
+        ImageButton faq     = (ImageButton) rootView.findViewById(R.id.faq_button);
 
         faq.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -156,7 +156,7 @@ public class FragmentRequestAmount extends Fragment {
         signalLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                removeCurrencySelector();
+                // removeCurrencySelector();
             }
         });
         updateText();
@@ -366,12 +366,19 @@ public class FragmentRequestAmount extends Fragment {
         if (getActivity() == null) return;
         String tmpAmount = amountBuilder.toString();
         amountEdit.setText(tmpAmount);
-        isoText.setText(BRCurrency.getSymbolByIso(getActivity(), selectedIso));
-
         if (BRCurrency.getCurrencyName(getActivity(), selectedIso) == "SAT") {
             isoButtonText.setText("S");
+            isoText.setText(BRCurrency.getSymbolByIso(getActivity(), selectedIso));
         } else {
-            isoButtonText.setText(String.format("%s(%s)", BRCurrency.getCurrencyName(getActivity(), selectedIso), BRCurrency.getSymbolByIso(getActivity(), selectedIso)));
+            if (selectedIso.equalsIgnoreCase("btc")) {
+                isoButtonText.setText(String.format("%s",BRConstants.bitcoinUppercase));
+                isoText.setText(BRConstants.bitcoinUppercase);
+            } else {
+                isoText.setText(BRCurrency.getSymbolByIso(getActivity(), selectedIso));
+                isoButtonText.setText(
+                    String.format("%s(%s)", BRCurrency.getCurrencyName(getActivity(), selectedIso), BRCurrency.getSymbolByIso(getActivity(), selectedIso))
+                );
+            }
         }
     }
 
