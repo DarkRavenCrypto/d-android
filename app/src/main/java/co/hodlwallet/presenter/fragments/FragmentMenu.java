@@ -162,13 +162,11 @@ public class FragmentMenu extends Fragment {
 
     public class MenuListAdapter extends ArrayAdapter<BRMenuItem> {
 
-//        private List<BRMenuItem> items;
         private Context mContext;
         private int defaultLayoutResource = R.layout.menu_list_item;
 
         public MenuListAdapter(@NonNull Context context, @LayoutRes int resource, @NonNull List<BRMenuItem> items) {
             super(context, resource, items);
-//            this.items = items;
             this.mContext = context;
         }
 
@@ -184,7 +182,6 @@ public class FragmentMenu extends Fragment {
 
             text.setText(getItem(position).text);
             convertView.setOnClickListener(getItem(position).listener);
-//            applyBlur();
             return convertView;
 
         }

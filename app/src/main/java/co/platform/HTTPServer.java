@@ -68,7 +68,7 @@ public class HTTPServer {
     public static final int PORT = 31120;
     public static final String URL_EA = "http://localhost:" + PORT + "/ea";
     public static final String URL_BUY = "http://localhost:" + PORT + "/buy";
-    public static final String URL_SUPPORT = "https://n8vcoin.io";
+    public static final String URL_SUPPORT = "https://n8vcoin.io/contact.php";
     public static ServerMode mode;
 
     public enum ServerMode {

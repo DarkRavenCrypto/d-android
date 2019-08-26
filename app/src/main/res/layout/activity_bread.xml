@@ -291,7 +291,7 @@
         android:elevation="9dp"
         android:orientation="horizontal"
         android:weightSum="3"
-        android:alpha="0.85"
+        android:alpha="0.95"
         tools:layout_conversion_absoluteHeight="0dp"
         tools:layout_conversion_absoluteWidth="411dp"
         tools:layout_conversion_absoluteX="0dp"

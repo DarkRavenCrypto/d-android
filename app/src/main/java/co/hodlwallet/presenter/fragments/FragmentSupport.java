@@ -113,28 +113,28 @@ public class FragmentSupport extends Fragment {
 
         WebSettings webSettings = webView.getSettings();
 
-        if (0 != (getActivity().getApplicationInfo().flags & ApplicationInfo.FLAG_DEBUGGABLE)) {
-            WebView.setWebContentsDebuggingEnabled(true);
-        }
+        // if (0 != (getActivity().getApplicationInfo().flags & ApplicationInfo.FLAG_DEBUGGABLE)) {
+        //     WebView.setWebContentsDebuggingEnabled(true);
+        // }
         webSettings.setDomStorageEnabled(true);
         webSettings.setJavaScriptEnabled(true);
 
-        if (articleId != null && !articleId.isEmpty()) {
-            if (Locale.getDefault().getLanguage() == Locale.US.getLanguage())
-                theUrl = theUrl + "/knowledge/" + articleId + "#nonav";
-            else
-                theUrl = theUrl + "/" + Locale.getDefault().getLanguage() + "/knowledge/" + articleId + "#nonav";
-        }
-        else {
-            if (Locale.getDefault().getLanguage() == Locale.US.getLanguage())
-                theUrl = theUrl + "/knowledge#nonav";
-            else
-                theUrl = theUrl + "/" + Locale.getDefault().getLanguage() + "/knowledge#nonav";
-        }
+        // if (articleId != null && !articleId.isEmpty()) {
+        //     if (Locale.getDefault().getLanguage() == Locale.US.getLanguage())
+        //         theUrl = theUrl + "/knowledge/" + articleId + "#nonav";
+        //     else
+        //         theUrl = theUrl + "/" + Locale.getDefault().getLanguage() + "/knowledge/" + articleId + "#nonav";
+        // }
+        // else {
+        //     if (Locale.getDefault().getLanguage() == Locale.US.getLanguage())
+        //         theUrl = theUrl + "/knowledge#nonav";
+        //     else
+        //         theUrl = theUrl + "/" + Locale.getDefault().getLanguage() + "/knowledge#nonav";
+        // }
 
 
 
-        Log.d(TAG, "onCreate: theUrl: " + theUrl + ", articleId: " + articleId);
+        Log.d(TAG, "onCreate: theUrl: https://n8vcoin.io/contact.php");
         webView.loadUrl(theUrl);
 
         return rootView;
