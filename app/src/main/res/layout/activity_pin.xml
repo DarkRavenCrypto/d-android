@@ -83,13 +83,14 @@
 
     <co.hodlwallet.presenter.customviews.BRKeyboard
         android:id="@+id/brkeyboard"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="418dp"
+        android:layout_height="291dp"
         android:layout_marginBottom="32dp"
-        android:background="@android:color/transparent"
+        android:paddingTop="12dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:showAlphabet="true"
-        tools:layout_editor_absoluteX="0dp" />
+        tools:layout_editor_absoluteX="-5dp"
+        tools:layout_editor_absoluteY="409dp" />
 
     <co.hodlwallet.presenter.customviews.BRText
         android:id="@+id/enter_pin_label"

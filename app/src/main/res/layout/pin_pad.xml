@@ -6,6 +6,7 @@
             android:layout_gravity="center"
             android:columnCount="3"
             android:orientation="horizontal"
+            android:background="@android:color/transparent"
             android:rowCount="4">
 
     <co.hodlwallet.presenter.customviews.BRButton

@@ -65,10 +65,6 @@ public class FragmentPin extends Fragment {
     private View dot4;
     private View dot5;
     private View dot6;
-    private StringBuilder pin = new StringBuilder();
-    private int pinLimit = 6;
-//    private boolean pinInsertAllowed;
-
     private TextView title;
     private TextView message;
     private RelativeLayout dialogLayout;
@@ -76,22 +72,23 @@ public class FragmentPin extends Fragment {
     private boolean authSucceeded;
     private String customTitle;
     private String customMessage;
+    private StringBuilder pin   = new StringBuilder();
+    private int pinLimit        = 6;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // The last two arguments ensure LayoutParams are inflated
         // properly.
 
-        View rootView = inflater.inflate(R.layout.fragment_bread_pin, container, false);
-        keyboard = (BRKeyboard) rootView.findViewById(R.id.brkeyboard);
-        pinLayout = (LinearLayout) rootView.findViewById(R.id.pinLayout);
+        View rootView   = inflater.inflate(R.layout.fragment_bread_pin, container, false);
+        keyboard        = (BRKeyboard)       rootView.findViewById(R.id.brkeyboard);
+        pinLayout       = (LinearLayout)     rootView.findViewById(R.id.pinLayout);
+        title           = (TextView)         rootView.findViewById(R.id.title);
+        message         = (TextView)         rootView.findViewById(R.id.message);
+        dialogLayout    = (RelativeLayout)   rootView.findViewById(R.id.pin_dialog);
+        mainLayout      = (ConstraintLayout) rootView.findViewById(R.id.activity_pin);
 
         if (BRKeyStore.getPinCode(getContext()).length() == 4) pinLimit = 4;
-
-        title = (TextView) rootView.findViewById(R.id.title);
-        message = (TextView) rootView.findViewById(R.id.message);
-        dialogLayout = (RelativeLayout) rootView.findViewById(R.id.pin_dialog);
-        mainLayout = (ConstraintLayout) rootView.findViewById(R.id.activity_pin);
 
         mainLayout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -121,9 +118,9 @@ public class FragmentPin extends Fragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        float keyboardTrY = keyboard.getTranslationY();
-        Bundle bundle = getArguments();
-        String titleString = bundle.getString("title");
+        float keyboardTrY    = keyboard.getTranslationY();
+        Bundle bundle        = getArguments();
+        String titleString   = bundle.getString("title");
         String messageString = bundle.getString("message");
         if (!Utils.isNullOrEmpty(titleString)) {
             customTitle = titleString;
@@ -147,7 +144,8 @@ public class FragmentPin extends Fragment {
                 .scaleY(dialogScaleY)
                 .scaleX(dialogScaleX)
                 .setInterpolator(new OvershootInterpolator(2f));
-
+        keyboard.setBRButtonBackgroundResId(android.R.color.transparent);
+        keyboard.setBRKeyboardColor(android.R.color.transparent);
     }
 
     @Override
@@ -187,18 +185,29 @@ public class FragmentPin extends Fragment {
 
     private void updateDots() {
         if (dot1 == null) return;
-        AuthManager.getInstance().updateDots(getActivity(), pinLimit, pin.toString(), dot1, dot2, dot3, dot4, dot5, dot6, R.drawable.ic_pin_square_gray, new AuthManager.OnPinSuccess() {
-            @Override
-            public void onSuccess() {
-                if (AuthManager.getInstance().checkAuth(pin.toString(), getContext())) {
-                    handleSuccess();
-                } else {
-                    handleFail();
+        AuthManager.getInstance().updateDots(
+            getActivity(),
+            pinLimit,
+            pin.toString(),
+            dot1,
+            dot2,
+            dot3,
+            dot4,
+            dot5,
+            dot6,
+            R.drawable.ic_pin_square_gray,
+            new AuthManager.OnPinSuccess() {
+                @Override
+                public void onSuccess() {
+                    if (AuthManager.getInstance().checkAuth(pin.toString(), getContext())) {
+                        handleSuccess();
+                    } else {
+                        handleFail();
+                    }
+                    pin = new StringBuilder("");
                 }
-                pin = new StringBuilder("");
             }
-        });
-
+        ); //AuthManager
     }
 
     private void handleSuccess() {

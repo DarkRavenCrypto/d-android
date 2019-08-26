@@ -93,22 +93,25 @@ public class LoginActivity extends BRActivity {
 
         if (BRKeyStore.getPinCode(this).length() == 4) pinLimit = 4;
 
-        keyboard = (BRKeyboard) findViewById(R.id.brkeyboard);
-        pinLayout = (LinearLayout) findViewById(R.id.pinLayout);
-        fingerPrint = (ImageButton) findViewById(R.id.fingerprint_icon);
+        keyboard             = (BRKeyboard)       findViewById(R.id.brkeyboard);
+        pinLayout            = (LinearLayout)     findViewById(R.id.pinLayout);
+        fingerPrint          = (ImageButton)      findViewById(R.id.fingerprint_icon);
 
-        title = (ImageView) findViewById(R.id.title);
-        unlockedImage = (ImageView) findViewById(R.id.unlocked_image);
-        unlockedText = (TextView) findViewById(R.id.unlocked_text);
-        enterPinLabel = (TextView) findViewById(R.id.enter_pin_label);
+        title                = (ImageView)        findViewById(R.id.title);
+        unlockedImage        = (ImageView)        findViewById(R.id.unlocked_image);
+        unlockedText         = (TextView)         findViewById(R.id.unlocked_text);
+        enterPinLabel        = (TextView)         findViewById(R.id.enter_pin_label);
         offlineButtonsLayout = (ConstraintLayout) findViewById(R.id.buttons_layout);
 
-        dot1 = findViewById(R.id.dot1);
-        dot2 = findViewById(R.id.dot2);
-        dot3 = findViewById(R.id.dot3);
-        dot4 = findViewById(R.id.dot4);
-        dot5 = findViewById(R.id.dot5);
-        dot6 = findViewById(R.id.dot6);
+        dot1                = findViewById(R.id.dot1);
+        dot2                = findViewById(R.id.dot2);
+        dot3                = findViewById(R.id.dot3);
+        dot4                = findViewById(R.id.dot4);
+        dot5                = findViewById(R.id.dot5);
+        dot6                = findViewById(R.id.dot6);
+
+        leftButton          = (Button) findViewById(R.id.left_button);
+        rightButton         = (Button) findViewById(R.id.right_button);
 
         keyboard.addOnInsertListener(new BRKeyboard.OnInsertListener() {
             @Override
@@ -116,24 +119,19 @@ public class LoginActivity extends BRActivity {
                 handleClick(key);
             }
         });
-        keyboard.setBRButtonBackgroundResId(R.drawable.keyboard_gray_button);
+        keyboard.setBRButtonBackgroundResId(android.R.color.transparent);
         keyboard.setBRButtonTextColor(R.color.white);
         keyboard.setShowDot(false);
         keyboard.setBreadground(getDrawable(R.drawable.receive_layout));
         keyboard.setCustomButtonBackgroundColor(10, getColor(android.R.color.transparent));
         keyboard.setDeleteImage(getDrawable(R.drawable.ic_delete_white));
-
-        leftButton = (Button) findViewById(R.id.left_button);
-        rightButton = (Button) findViewById(R.id.right_button);
-
-        // setUpOfflineButtons();
+        keyboard.setBRKeyboardColor(android.R.color.transparent);
 
         leftButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (!BRAnimator.isClickAllowed()) return;
                 BRAnimator.showReceiveFragment(LoginActivity.this, false);
-//                chooseWordsSize(true);
             }
         });
 
@@ -175,7 +173,7 @@ public class LoginActivity extends BRActivity {
         });
 
         final boolean useFingerprint = AuthManager.isFingerPrintAvailableAndSetup(this) && BRSharedPrefs.getUseFingerprint(this);
-//        Log.e(TAG, "onCreate: isFingerPrintAvailableAndSetup: " + useFingerprint);
+
         fingerPrint.setVisibility(useFingerprint ? View.VISIBLE : View.GONE);
 
         if (useFingerprint)
@@ -185,7 +183,6 @@ public class LoginActivity extends BRActivity {
                     AuthManager.getInstance().authPrompt(LoginActivity.this, "", "", false, true, new BRAuthCompletion() {
                         @Override
                         public void onComplete() {
-//                            AuthManager.getInstance().authSuccess(LoginActivity.this);
                             unlockWallet();
                         }
 
@@ -211,9 +208,8 @@ public class LoginActivity extends BRActivity {
     protected void onResume() {
         super.onResume();
         updateDots();
-
-        appVisible = true;
-        app = this;
+        appVisible   = true;
+        app          = this;
         inputAllowed = true;
         if (!BRWalletManager.getInstance().isCreated()) {
             BRExecutor.getInstance().forBackgroundTasks().execute(new Runnable() {
@@ -343,8 +339,6 @@ public class LoginActivity extends BRActivity {
 
         leftDrawable.setStroke(stoke, activeColor, 0, 0);
         rightDrawable.setStroke(stoke, activeColor, 0, 0);
-        // leftButton.setTextColor(activeColor);
-        // rightButton.setTextColor(activeColor);
     }
 
     @Override
