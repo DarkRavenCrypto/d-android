@@ -18,7 +18,6 @@ import java.util.Locale;
 
 public class AboutActivity extends BRActivity {
     private static final String TAG = AboutActivity.class.getName();
-//    private TextView termsText;
     private TextView policyText;
     private TextView infoText;
 
@@ -43,7 +42,6 @@ public class AboutActivity extends BRActivity {
         setContentView(R.layout.activity_about);
 
         infoText = (TextView) findViewById(R.id.info_text);
-//        termsText = (TextView) findViewById(R.id.terms_text);
         policyText = (TextView) findViewById(R.id.policy_text);
 
         PackageInfo pInfo = null;
@@ -63,7 +61,7 @@ public class AboutActivity extends BRActivity {
         redditShare.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.reddit.com/r/hodlwallet"));
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.reddit.com/r/NativeCoinOfficial"));
                 startActivity(browserIntent);
                 app.overridePendingTransition(R.anim.enter_from_bottom, R.anim.empty_300);
             }
@@ -72,7 +70,7 @@ public class AboutActivity extends BRActivity {
         twitterShare.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://twitter.com/hodlwallet"));
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://twitter.com/N8VCoin"));
                 startActivity(browserIntent);
                 app.overridePendingTransition(R.anim.enter_from_bottom, R.anim.empty_300);
             }
@@ -80,19 +78,19 @@ public class AboutActivity extends BRActivity {
         blogShare.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://hodlwallet.com"));
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://t.me/NativeCoinOfficial"));
                 startActivity(browserIntent);
                 app.overridePendingTransition(R.anim.enter_from_bottom, R.anim.empty_300);
             }
         });
-        policyText.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://hodlwallet.com/privacy-policy"));
-                startActivity(browserIntent);
-                app.overridePendingTransition(R.anim.enter_from_bottom, R.anim.empty_300);
-            }
-        });
+        // policyText.setOnClickListener(new View.OnClickListener() {
+        //     @Override
+        //     public void onClick(View v) {
+        //         Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://hodlwallet.com/privacy-policy"));
+        //         startActivity(browserIntent);
+        //         app.overridePendingTransition(R.anim.enter_from_bottom, R.anim.empty_300);
+        //     }
+        // });
 //        termsText.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {

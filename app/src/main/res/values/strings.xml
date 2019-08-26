@@ -3,7 +3,7 @@
   <!-- App name -->
   <string name="About.appName.android">NativeMobile</string>
   <!-- About screen blog label -->
-  <string name="About.blog">Blog</string>
+  <string name="About.blog">Telegram</string>
   <!-- About screen footer -->
   <string name="About.footer">NativeCoin Mobile Wallet. Version %1$s</string>
   <!-- Privay Policy button label -->
