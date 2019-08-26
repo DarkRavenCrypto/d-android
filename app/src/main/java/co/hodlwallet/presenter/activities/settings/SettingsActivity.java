@@ -141,12 +141,12 @@ public class SettingsActivity extends BRActivity {
             }
         }, false));
 
-        items.add(new BRSettingsItem(getString(R.string.Settings_legacyAddress), "", new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                BRAnimator.showLegacyFragment(SettingsActivity.this, true);
-            }
-        }, false));
+        // items.add(new BRSettingsItem(getString(R.string.Settings_legacyAddress), "", new View.OnClickListener() {
+        //     @Override
+        //     public void onClick(View v) {
+        //         BRAnimator.showLegacyFragment(SettingsActivity.this, true);
+        //     }
+        // }, false));
 
         items.add(new BRSettingsItem(getString(R.string.Settings_manage), "", null, true));
 
@@ -183,14 +183,14 @@ public class SettingsActivity extends BRActivity {
             }, false));
         }
 
-        items.add(new BRSettingsItem(getString(R.string.Settings_currency), BRSharedPrefs.getIso(this), new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(SettingsActivity.this, DisplayCurrencyActivity.class);
-                startActivity(intent);
-                overridePendingTransition(R.anim.enter_from_right, R.anim.exit_to_left);
-            }
-        }, false));
+        // items.add(new BRSettingsItem(getString(R.string.Settings_currency), BRSharedPrefs.getIso(this), new View.OnClickListener() {
+        //     @Override
+        //     public void onClick(View v) {
+        //         Intent intent = new Intent(SettingsActivity.this, DisplayCurrencyActivity.class);
+        //         startActivity(intent);
+        //         overridePendingTransition(R.anim.enter_from_right, R.anim.exit_to_left);
+        //     }
+        // }, false));
 
         items.add(new BRSettingsItem(getString(R.string.Settings_sync), "", new View.OnClickListener() {
             @Override
