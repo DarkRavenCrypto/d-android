@@ -747,7 +747,18 @@ public class FragmentSend extends Fragment {
         curBalance = BRWalletManager.getInstance().getBalance(getActivity());
         if (!amountLabelOn)
             isoText.setText(BRCurrency.getSymbolByIso(getActivity(), selectedIso));
-        isoButtonText.setText(String.format("%s(%s)", BRCurrency.getCurrencyName(getActivity(), selectedIso), BRCurrency.getSymbolByIso(getActivity(), selectedIso)));
+        if (selectedIso.equalsIgnoreCase("btc")) {
+            isoButtonText.setText(String.format("%s",BRConstants.bitcoinUppercase));
+        } else {
+            isoButtonText.setText(
+                String.format(
+                    "%s(%s)",
+                    BRCurrency.getCurrencyName(getActivity(), selectedIso),
+                    BRCurrency.getSymbolByIso(getActivity(), selectedIso)
+                )
+            );    
+        }
+        
         //Balance depending on ISO
         long satoshis = (Utils.isNullOrEmpty(tmpAmount) || tmpAmount.equalsIgnoreCase(".")) ? 0 :
                 (selectedIso.equalsIgnoreCase("btc") ? BRExchange.getSatoshisForBitcoin(getActivity(), new BigDecimal(tmpAmount)).longValue() : BRExchange.getSatoshisFromAmount(getActivity(), selectedIso, new BigDecimal(tmpAmount)).longValue());
