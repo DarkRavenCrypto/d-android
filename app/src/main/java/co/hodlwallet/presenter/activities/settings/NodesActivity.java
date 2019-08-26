@@ -37,7 +37,6 @@ public class NodesActivity extends BRActivity {
     private int mInterval = 3000;
     private Handler mHandler;
     private boolean updatingNode;
-//    private TextView nodeLabel;
 
     Runnable mStatusChecker = new Runnable() {
         @Override

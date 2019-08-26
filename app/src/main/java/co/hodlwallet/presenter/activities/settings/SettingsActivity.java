@@ -147,9 +147,9 @@ public class SettingsActivity extends BRActivity {
         //         BRAnimator.showLegacyFragment(SettingsActivity.this, true);
         //     }
         // }, false));
-
+        //---------------------------------------------------------//
         items.add(new BRSettingsItem(getString(R.string.Settings_manage), "", null, true));
-
+        //---------------------------------------------------------//
         items.add(new BRSettingsItem(getString(R.string.Settings_notifications), BRSharedPrefs.getShowNotification(this) ?
                 getString(R.string.PushNotifications_on) : getString(R.string.PushNotifications_off), new View.OnClickListener() {
             @Override
@@ -200,9 +200,18 @@ public class SettingsActivity extends BRActivity {
                 overridePendingTransition(R.anim.enter_from_right, R.anim.exit_to_left);
             }
         }, false));
+        items.add(new BRSettingsItem(getString(R.string.NodeSelector_title), "", new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SettingsActivity.this, NodesActivity.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.enter_from_right, R.anim.empty_300);
 
+            }
+        }, false));
+        //---------------------------------------------------------//
         items.add(new BRSettingsItem("", "", null, true));
-
+        //---------------------------------------------------------//
         boolean shareDataEnabled = false;
         if (shareDataEnabled) {
             items.add(new BRSettingsItem(getString(R.string.Settings_shareData), "", new View.OnClickListener() {
@@ -236,15 +245,17 @@ public class SettingsActivity extends BRActivity {
                 overridePendingTransition(R.anim.enter_from_right, R.anim.exit_to_left);
             }
         }, false));
+        //---------------------------------------------------------//
         items.add(new BRSettingsItem("", "", null, true));
-        items.add(new BRSettingsItem(getString(R.string.Settings_advancedTitle), "", new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(SettingsActivity.this, AdvancedActivity.class);
-                startActivity(intent);
-                overridePendingTransition(R.anim.enter_from_right, R.anim.exit_to_left);
-            }
-        }, false));
+        //---------------------------------------------------------//
+        // items.add(new BRSettingsItem(getString(R.string.Settings_advancedTitle), "", new View.OnClickListener() {
+        //     @Override
+        //     public void onClick(View v) {
+        //         Intent intent = new Intent(SettingsActivity.this, AdvancedActivity.class);
+        //         startActivity(intent);
+        //         overridePendingTransition(R.anim.enter_from_right, R.anim.exit_to_left);
+        //     }
+        // }, false));
 
         items.add(new BRSettingsItem("", "", null, true)); //just for a blank space
 
