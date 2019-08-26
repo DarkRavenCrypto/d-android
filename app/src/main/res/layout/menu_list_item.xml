@@ -4,6 +4,7 @@
                 android:layout_height="wrap_content"
                 android:filterTouchesWhenObscured="true"
                 android:orientation="horizontal"
+                android:alpha="0.9"
     >
 
     <co.hodlwallet.presenter.customviews.BRText
