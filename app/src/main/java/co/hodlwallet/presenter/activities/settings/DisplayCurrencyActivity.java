@@ -119,7 +119,7 @@ public class DisplayCurrencyActivity extends BRActivity {
         if (entity != null) {
             String finalExchangeRate = BRCurrency.getFormattedCurrencyString(DisplayCurrencyActivity.this, BRSharedPrefs.getIso(this), new BigDecimal(entity.rate));
             boolean satoshi = BRSharedPrefs.getCurrencyUnit(this) == BRConstants.CURRENT_UNIT_SATOSHI;
-            exchangeText.setText(BRCurrency.getFormattedCurrencyString(this, "BTC", new BigDecimal(satoshi ? 100000000 : 1)) + " = " + finalExchangeRate);
+            exchangeText.setText(BRCurrency.getFormattedCurrencyString(this, BRConstants.bitcoinUppercase, new BigDecimal(satoshi ? 100000000 : 1)) + " = " + finalExchangeRate);
         }
         adapter.notifyDataSetChanged();
     }

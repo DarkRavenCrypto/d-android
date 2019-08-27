@@ -162,7 +162,7 @@ public class FragmentSend extends Fragment {
         feeText = (TextView) rootView.findViewById(R.id.fee_text);
         currentTime = (TextView) rootView.findViewById(R.id.current_time);
         close = (ImageButton) rootView.findViewById(R.id.close_button);
-        selectedIso = BRSharedPrefs.getPreferredBTC(getContext()) ? "BTC" : BRSharedPrefs.getIso(getContext());
+        selectedIso = BRSharedPrefs.getPreferredBTC(getContext()) ? BRConstants.bitcoinUppercase : BRSharedPrefs.getIso(getContext());
         customFee = (Button) rootView.findViewById(R.id.custom_fee);
 
         amountBuilder = new StringBuilder(0);
@@ -406,7 +406,7 @@ public class FragmentSend extends Fragment {
                         amountEdit.setText(amountBuilder.toString());
                     }
 
-                    selectedIso = "BTC";
+                    selectedIso = BRConstants.bitcoinUppercase;
                 } else {
                     if (amountBuilder.length() > 0) {
                         BigDecimal currentAmountInSatoshi = null;
@@ -591,7 +591,7 @@ public class FragmentSend extends Fragment {
         // 0. clear what we currently have in amount
         amountBuilder.replace(0, amountBuilder.length(), "");
 
-        if (!selectedIso.equals("BTC")) {
+        if (!selectedIso.equals(BRConstants.bitcoinUppercase)) {
             isoButton.performClick();
         }
 
@@ -747,7 +747,7 @@ public class FragmentSend extends Fragment {
         curBalance = BRWalletManager.getInstance().getBalance(getActivity());
         if (!amountLabelOn)
             isoText.setText(BRCurrency.getSymbolByIso(getActivity(), selectedIso));
-        if (selectedIso.equalsIgnoreCase("btc")) {
+        if (selectedIso.equalsIgnoreCase(BRConstants.bitcoinUppercase)) {
             isoButtonText.setText(String.format("%s",BRConstants.bitcoinUppercase));
         } else {
             isoButtonText.setText(
@@ -761,7 +761,7 @@ public class FragmentSend extends Fragment {
         
         //Balance depending on ISO
         long satoshis = (Utils.isNullOrEmpty(tmpAmount) || tmpAmount.equalsIgnoreCase(".")) ? 0 :
-                (selectedIso.equalsIgnoreCase("btc") ? BRExchange.getSatoshisForBitcoin(getActivity(), new BigDecimal(tmpAmount)).longValue() : BRExchange.getSatoshisFromAmount(getActivity(), selectedIso, new BigDecimal(tmpAmount)).longValue());
+                (selectedIso.equalsIgnoreCase(BRConstants.bitcoinUppercase) ? BRExchange.getSatoshisForBitcoin(getActivity(), new BigDecimal(tmpAmount)).longValue() : BRExchange.getSatoshisFromAmount(getActivity(), selectedIso, new BigDecimal(tmpAmount)).longValue());
         BigDecimal balanceForISO = BRExchange.getAmountFromSatoshis(getActivity(), iso, new BigDecimal(curBalance));
 
         //formattedBalance

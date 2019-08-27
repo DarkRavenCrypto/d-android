@@ -111,6 +111,9 @@ public class BRApiManager {
                     try {
                         JSONObject tmpObj   = (JSONObject) arr.get(i);
                         tmp.name            = tmpObj.getString("name");
+                        if (tmp.name == "BTC") {
+                            tmp.name        = BRConstants.bitcoinUppercase;
+                        }
                         tmp.code            = tmpObj.getString("code");
                         if (tmp.code.equalsIgnoreCase("USD")) {
                             tmp.rate        = cmcUSD;

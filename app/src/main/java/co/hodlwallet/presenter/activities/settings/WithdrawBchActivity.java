@@ -30,6 +30,7 @@ import co.hodlwallet.tools.security.PostAuth;
 import co.hodlwallet.tools.threads.BRExecutor;
 import co.hodlwallet.tools.util.BRCurrency;
 import co.hodlwallet.tools.util.BRExchange;
+import co.hodlwallet.tools.util.BRConstants;
 import co.hodlwallet.tools.util.Utils;
 import co.hodlwallet.wallet.BRPeerManager;
 import co.hodlwallet.wallet.BRWalletManager;
@@ -79,7 +80,7 @@ public class WithdrawBchActivity extends BRActivity {
         long satoshis = BRWalletManager.getBCashBalance(pubkey);
         BigDecimal amount = BRExchange.getBitcoinForSatoshis(this, new BigDecimal(satoshis));
 
-        String balance = BRCurrency.getFormattedCurrencyString(this, "BTC", amount);
+        String balance = BRCurrency.getFormattedCurrencyString(this, BRConstants.bitcoinUppercase, amount);
         description.setText(String.format(getString(R.string.BCH_body), balance));
 
         txHash.setOnClickListener(new View.OnClickListener() {

@@ -151,7 +151,7 @@ public class FragmentRequestAmount extends Fragment {
 
         copiedLayout.setBackgroundColor(getContext().getColor(R.color.gray_background));
 
-        selectedIso = BRSharedPrefs.getPreferredBTC(getContext()) ? "BTC" : BRSharedPrefs.getIso(getContext());
+        selectedIso = BRSharedPrefs.getPreferredBTC(getContext()) ? BRConstants.bitcoinUppercase : BRSharedPrefs.getIso(getContext());
 
         signalLayout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -232,7 +232,7 @@ public class FragmentRequestAmount extends Fragment {
             @Override
             public void onClick(View v) {
                 if (selectedIso.equalsIgnoreCase(BRSharedPrefs.getIso(getContext()))) {
-                    selectedIso = "BTC";
+                    selectedIso = BRConstants.bitcoinUppercase;
                 } else {
                     selectedIso = BRSharedPrefs.getIso(getContext());
                 }
@@ -274,7 +274,7 @@ public class FragmentRequestAmount extends Fragment {
                     @Override
                     public void run() {
                         mAddress.setText(receiveAddress);
-                        boolean generated = generateQrImage(receiveAddress, "0", "BTC");
+                        boolean generated = generateQrImage(receiveAddress, "0", BRConstants.bitcoinUppercase);
                         if (!generated)
                             throw new RuntimeException("failed to generate qr image for address");
                     }
@@ -370,7 +370,7 @@ public class FragmentRequestAmount extends Fragment {
             isoButtonText.setText("S");
             isoText.setText(BRCurrency.getSymbolByIso(getActivity(), selectedIso));
         } else {
-            if (selectedIso.equalsIgnoreCase("btc")) {
+            if (selectedIso.equalsIgnoreCase(BRConstants.bitcoinUppercase)) {
                 isoButtonText.setText(String.format("%s",BRConstants.bitcoinUppercase));
                 isoText.setText(BRConstants.bitcoinUppercase);
             } else {
