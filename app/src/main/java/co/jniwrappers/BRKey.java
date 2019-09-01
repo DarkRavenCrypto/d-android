@@ -2,7 +2,7 @@ package co.jniwrappers;
 
 import android.util.Log;
 
-import co.hodlwallet.tools.util.Utils;
+import co.pford.tools.util.Utils;
 
 import java.util.Arrays;
 

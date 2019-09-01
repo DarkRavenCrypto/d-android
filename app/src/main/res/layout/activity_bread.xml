@@ -12,7 +12,7 @@
                 android:fitsSystemWindows="true"
                 android:focusableInTouchMode="true"
                 android:orientation="vertical"
-                tools:context="co.hodlwallet.presenter.activities.BreadActivity">
+                tools:context="co.pford.presenter.activities.BreadActivity">
 
     <LinearLayout
         android:id="@+id/toolbar_layout"
@@ -60,7 +60,7 @@
                         app:layout_constraintLeft_toLeftOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
-                    <co.hodlwallet.presenter.customviews.BRText
+                    <co.pford.presenter.customviews.BRText
                         android:id="@+id/btc_price"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -73,7 +73,7 @@
                         app:layout_constraintBottom_toBottomOf="@id/wallet_name_text"/>
 
 
-                    <co.hodlwallet.presenter.customviews.BRText
+                    <co.pford.presenter.customviews.BRText
                         android:id="@+id/primary_price"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -90,7 +90,7 @@
                         app:layout_constraintTop_toBottomOf="@+id/wallet_name_text"
                         app:layout_constraintVertical_bias="0.492"/>
 
-                    <co.hodlwallet.presenter.customviews.BRText
+                    <co.pford.presenter.customviews.BRText
                         android:id="@+id/equals"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -107,7 +107,7 @@
                         app:layout_constraintTop_toBottomOf="@+id/wallet_name_text"
                         app:layout_constraintVertical_bias="0.492"/>
 
-                    <co.hodlwallet.presenter.customviews.BRText
+                    <co.pford.presenter.customviews.BRText
                         android:id="@+id/secondary_price"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -124,7 +124,7 @@
                         app:layout_constraintTop_toBottomOf="@+id/wallet_name_text"
                         app:layout_constraintVertical_bias="0.492"/>
 
-                    <co.hodlwallet.presenter.customviews.BRText
+                    <co.pford.presenter.customviews.BRText
                         android:id="@+id/price_change_text"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -135,7 +135,7 @@
                         app:layout_constraintLeft_toLeftOf="@+id/primary_price"
                         app:layout_constraintTop_toBottomOf="@+id/primary_price"/>
 
-                    <co.hodlwallet.presenter.customviews.BRText
+                    <co.pford.presenter.customviews.BRText
                         android:id="@+id/manage_text"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -162,7 +162,7 @@
                 </android.support.constraint.ConstraintLayout>
             </android.support.v7.widget.Toolbar>
 
-            <co.hodlwallet.presenter.customviews.BRSearchBar
+            <co.pford.presenter.customviews.BRSearchBar
                 xmlns:app="http://schemas.android.com/apk/res-auto"
                 android:id="@+id/search_bar"
                 android:layout_width="match_parent"
@@ -173,9 +173,9 @@
                 app:contentInsetLeft="0dp"
                 app:contentInsetStart="0dp"
                 tools:layout_constraintTop_creator="1">
-            </co.hodlwallet.presenter.customviews.BRSearchBar>
+            </co.pford.presenter.customviews.BRSearchBar>
 
-            <co.hodlwallet.presenter.customviews.BRNotificationBar
+            <co.pford.presenter.customviews.BRNotificationBar
                 xmlns:app="http://schemas.android.com/apk/res-auto"
                 android:id="@+id/notification_bar"
                 android:layout_width="match_parent"
@@ -187,7 +187,7 @@
                 app:contentInsetLeft="0dp"
                 app:contentInsetStart="0dp"
                 tools:layout_constraintTop_creator="1">
-            </co.hodlwallet.presenter.customviews.BRNotificationBar>
+            </co.pford.presenter.customviews.BRNotificationBar>
 
         </ViewFlipper>
 
@@ -202,7 +202,7 @@
             tools:layout_constraintRight_creator="1"
             tools:layout_constraintTop_creator="1">
 
-            <co.hodlwallet.presenter.customviews.BRText
+            <co.pford.presenter.customviews.BRText
                 android:id="@+id/loading_label"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -263,7 +263,7 @@
 
         </android.support.v7.widget.RecyclerView>
 
-        <co.hodlwallet.presenter.customviews.BRText
+        <co.pford.presenter.customviews.BRText
             android:id="@+id/empty_tx_tip"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -312,7 +312,7 @@
                 android:layout_marginTop="15dp"
                 android:src="@drawable/ic_send_tab_icon" />
 
-            <co.hodlwallet.presenter.customviews.BRText
+            <co.pford.presenter.customviews.BRText
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
                 android:layout_marginTop="4dp"
@@ -340,7 +340,7 @@
                 android:layout_weight="1"
                 android:src="@drawable/ic_receive_tab_icon" />
 
-            <co.hodlwallet.presenter.customviews.BRText
+            <co.pford.presenter.customviews.BRText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
@@ -368,7 +368,7 @@
                 android:layout_weight="1"
                 android:src="@drawable/ic_menu_tab_icon" />
 
-            <co.hodlwallet.presenter.customviews.BRText
+            <co.pford.presenter.customviews.BRText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"

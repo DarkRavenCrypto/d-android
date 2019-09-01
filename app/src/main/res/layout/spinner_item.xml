@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<co.hodlwallet.presenter.customviews.BRButton
+<co.pford.presenter.customviews.BRButton
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/watch_list_layout"
@@ -17,4 +17,4 @@
     app:isBreadButton="true"
     >
 
-</co.hodlwallet.presenter.customviews.BRButton>
+</co.pford.presenter.customviews.BRButton>

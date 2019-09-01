@@ -1,4 +1,4 @@
-<co.hodlwallet.presenter.customviews.BRRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<co.pford.presenter.customviews.BRRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
                                                         xmlns:app="http://schemas.android.com/apk/res-auto"
                                                         android:id="@+id/layout"
                                                         android:layout_width="match_parent"
@@ -16,7 +16,7 @@
         android:background="@drawable/menu_layout"
         android:orientation="vertical">
 
-        <co.hodlwallet.presenter.customviews.BRText
+        <co.pford.presenter.customviews.BRText
             android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -47,7 +47,7 @@
             android:textSize="18sp"
             />
 
-        <co.hodlwallet.presenter.customviews.BREdit
+        <co.pford.presenter.customviews.BREdit
             android:id="@+id/wallet_name_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -63,7 +63,7 @@
             android:layout_marginTop="16dp"
             android:background="@color/separator_gray"/>
 
-        <co.hodlwallet.presenter.customviews.BRText
+        <co.pford.presenter.customviews.BRText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -73,7 +73,7 @@
             android:textSize="16sp"
             />
 
-        <co.hodlwallet.presenter.customviews.BRText
+        <co.pford.presenter.customviews.BRText
             android:id="@+id/wallet_creation_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -87,4 +87,4 @@
 
     </LinearLayout>
 
-</co.hodlwallet.presenter.customviews.BRRelativeLayout>
+</co.pford.presenter.customviews.BRRelativeLayout>

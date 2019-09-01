@@ -6,9 +6,9 @@ import android.content.Intent;
 import android.net.Uri;
 import android.util.Log;
 
-import co.hodlwallet.HodlApp;
-import co.hodlwallet.tools.threads.BRExecutor;
-import co.hodlwallet.tools.util.Utils;
+import co.pford.HodlApp;
+import co.pford.tools.threads.BRExecutor;
+import co.pford.tools.util.Utils;
 import co.platform.interfaces.Middleware;
 import co.platform.interfaces.Plugin;
 import co.platform.middlewares.APIProxy;

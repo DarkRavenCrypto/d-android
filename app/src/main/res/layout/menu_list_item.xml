@@ -7,7 +7,7 @@
                 android:alpha="0.9"
     >
 
-    <co.hodlwallet.presenter.customviews.BRText
+    <co.pford.presenter.customviews.BRText
         android:id="@+id/item_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<co.hodlwallet.presenter.customviews.BRLockScreenConstraintLayout
+<co.pford.presenter.customviews.BRLockScreenConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/backgroundflat"
-    tools:context="co.hodlwallet.presenter.activities.LoginActivity">
+    tools:context="co.pford.presenter.activities.LoginActivity">
 
     <ImageView
         android:id="@+id/title"
@@ -81,7 +81,7 @@
             android:background="@drawable/ic_pin_dot_white"/>
     </LinearLayout>
 
-    <co.hodlwallet.presenter.customviews.BRKeyboard
+    <co.pford.presenter.customviews.BRKeyboard
         android:id="@+id/brkeyboard"
         android:layout_width="418dp"
         android:layout_height="291dp"
@@ -92,7 +92,7 @@
         tools:layout_editor_absoluteX="-5dp"
         tools:layout_editor_absoluteY="409dp" />
 
-    <co.hodlwallet.presenter.customviews.BRText
+    <co.pford.presenter.customviews.BRText
         android:id="@+id/enter_pin_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -119,7 +119,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <co.hodlwallet.presenter.customviews.BRButton
+        <co.pford.presenter.customviews.BRButton
             android:id="@+id/left_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -132,7 +132,7 @@
             app:isBreadButton="false"
             app:layout_constraintLeft_toLeftOf="parent" />
 
-        <co.hodlwallet.presenter.customviews.BRButton
+        <co.pford.presenter.customviews.BRButton
             android:id="@+id/right_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -158,7 +158,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.445" />
 
-    <co.hodlwallet.presenter.customviews.BRText
+    <co.pford.presenter.customviews.BRText
         android:id="@+id/unlocked_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -186,4 +186,4 @@
         app:layout_constraintBottom_toTopOf="@+id/brkeyboard"
         app:layout_constraintRight_toRightOf="parent"/>
 
-</co.hodlwallet.presenter.customviews.BRLockScreenConstraintLayout>
+</co.pford.presenter.customviews.BRLockScreenConstraintLayout>

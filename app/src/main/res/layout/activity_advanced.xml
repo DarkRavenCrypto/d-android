@@ -7,9 +7,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/backgroundflat"
-    tools:context="co.hodlwallet.presenter.activities.SetPinActivity">
+    tools:context="co.pford.presenter.activities.SetPinActivity">
 
-    <co.hodlwallet.presenter.customviews.BRText
+    <co.pford.presenter.customviews.BRText
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

@@ -4,8 +4,8 @@ import android.app.Activity;
 import android.content.Context;
 import android.util.Log;
 
-import co.hodlwallet.HodlApp;
-import co.hodlwallet.tools.util.Utils;
+import co.pford.HodlApp;
+import co.pford.tools.util.Utils;
 import co.platform.APIClient;
 import co.platform.BRHTTPHelper;
 import co.platform.interfaces.Middleware;

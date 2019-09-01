@@ -2,7 +2,7 @@ package co.jniwrappers;
 
 import android.app.Activity;
 
-import co.hodlwallet.wallet.BRWalletManager;
+import co.pford.wallet.BRWalletManager;
 
 import static okhttp3.internal.Internal.instance;
 

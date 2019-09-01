@@ -24,7 +24,7 @@
 
 #include <jni.h>
 #include <BRTransaction.h>
-#include "co_dogecwallet_core_BRCoreJniReference.h"
+#include "co_pford_core_BRCoreJniReference.h"
 
 /**
  *

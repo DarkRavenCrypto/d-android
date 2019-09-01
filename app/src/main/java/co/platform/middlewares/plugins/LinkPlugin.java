@@ -6,10 +6,10 @@ import android.content.Intent;
 import android.net.Uri;
 import android.util.Log;
 
-import co.hodlwallet.HodlApp;
-import co.hodlwallet.R;
-import co.hodlwallet.presenter.activities.settings.WebViewActivity;
-import co.hodlwallet.tools.util.Utils;
+import co.pford.HodlApp;
+import co.pford.R;
+import co.pford.presenter.activities.settings.WebViewActivity;
+import co.pford.tools.util.Utils;
 import co.platform.BRHTTPHelper;
 import co.platform.interfaces.Plugin;
 

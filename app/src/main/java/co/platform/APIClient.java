@@ -10,17 +10,17 @@ import android.os.NetworkOnMainThreadException;
 import android.util.Log;
 import android.widget.RelativeLayout;
 
-import co.hodlwallet.HodlApp;
-import co.hodlwallet.BuildConfig;
-import co.hodlwallet.presenter.activities.util.ActivityUTILS;
-import co.hodlwallet.tools.crypto.Base58;
-import co.hodlwallet.tools.manager.BRApiManager;
-import co.hodlwallet.tools.manager.BRSharedPrefs;
-import co.hodlwallet.tools.crypto.CryptoHelper;
-import co.hodlwallet.tools.security.BRKeyStore;
-import co.hodlwallet.tools.threads.BRExecutor;
-import co.hodlwallet.tools.util.Utils;
-import co.hodlwallet.wallet.BRWalletManager;
+import co.pford.HodlApp;
+import co.pford.BuildConfig;
+import co.pford.presenter.activities.util.ActivityUTILS;
+import co.pford.tools.crypto.Base58;
+import co.pford.tools.manager.BRApiManager;
+import co.pford.tools.manager.BRSharedPrefs;
+import co.pford.tools.crypto.CryptoHelper;
+import co.pford.tools.security.BRKeyStore;
+import co.pford.tools.threads.BRExecutor;
+import co.pford.tools.util.Utils;
+import co.pford.wallet.BRWalletManager;
 import co.jniwrappers.BRKey;
 import co.platform.kvstore.RemoteKVStore;
 import co.platform.kvstore.ReplicatedKVStore;
@@ -64,7 +64,7 @@ import okhttp3.ResponseBody;
 import okio.Buffer;
 import okio.BufferedSink;
 
-import static co.hodlwallet.tools.util.BRCompressor.gZipExtract;
+import static co.pford.tools.util.BRCompressor.gZipExtract;
 
 
 /**
@@ -93,39 +93,30 @@ import static co.hodlwallet.tools.util.BRCompressor.gZipExtract;
  */
 public class APIClient {
 
-    public static final String TAG = APIClient.class.getName();
+    public static final String TAG              = APIClient.class.getName();
 
     // proto is the transport protocol to use for talking to the API (either http or https)
-    private static final String PROTO = "https";
-
+    private static final String PROTO           = "https";
     // convenience getter for the API endpoint
-    public static String BASE_URL = PROTO + "://" + HodlApp.HOST;
+    public static String BASE_URL               = PROTO + "://" + HodlApp.HOST;
     //feePerKb url
-    private static final String FEE_PER_KB_URL = "/v1/fee-per-kb";
+    private static final String FEE_PER_KB_URL  = "/v1/fee-per-kb";
     //token
-    private static final String TOKEN = "/token";
+    private static final String TOKEN           = "/token";
     //me
-    private static final String ME = "/me";
+    private static final String ME              = "/me";
     //singleton instance
     private static APIClient ourInstance;
-
-
-    private static final String BUNDLES = "bundles";
-    public static String BREAD_POINT = "bread-frontend-staging"; //todo make this production
-
-    private static final String BUNDLES_FOLDER = String.format("/%s", BUNDLES);
-
+    private static final String BUNDLES         = "bundles";
+    public static String BREAD_POINT            = "bread-frontend-production"; //todo make this production
+    private static final String BUNDLES_FOLDER  = String.format("/%s", BUNDLES);
     private static String BREAD_FILE;
     private static String BREAD_EXTRACTED;
-    private static final boolean PRINT_FILES = false;
-
-    private SimpleDateFormat sdf = new SimpleDateFormat("EEE, dd MMM yyyy HH:mm:ss z", Locale.US);
-
-    private boolean platformUpdating = false;
-    private AtomicInteger itemsLeftToUpdate = new AtomicInteger(0);
-
+    private static final boolean PRINT_FILES    = false;
+    private SimpleDateFormat sdf                = new SimpleDateFormat("EEE, dd MMM yyyy HH:mm:ss z", Locale.US);
+    private boolean platformUpdating            = false;
+    private AtomicInteger itemsLeftToUpdate     = new AtomicInteger(0);
     public static HTTPServer server;
-
     private Context ctx;
 
     public enum FeatureFlags {
@@ -160,8 +151,8 @@ public class APIClient {
         ctx = context;
         itemsLeftToUpdate = new AtomicInteger(0);
         if (0 != (context.getApplicationInfo().flags & ApplicationInfo.FLAG_DEBUGGABLE)) {
-            BREAD_POINT = "bread-frontend-staging";
-            BREAD_FILE = String.format("/%s.tar", BREAD_POINT);
+            BREAD_POINT     = "bread-frontend-staging";
+            BREAD_FILE      = String.format("/%s.tar", BREAD_POINT);
             BREAD_EXTRACTED = String.format("%s-extracted", BREAD_POINT);
         }
     }
@@ -173,17 +164,17 @@ public class APIClient {
         }
         Response response = null;
         try {
-            String strUtl = BASE_URL + FEE_PER_KB_URL;
+            String strUtl   = BASE_URL + FEE_PER_KB_URL;
             Request request = new Request.Builder().url(strUtl).get().build();
-            String body = null;
+            String body     = null;
             try {
-                response = sendRequest(request, false, 0);
-                body = response.body().string();
+                response    = sendRequest(request, false, 0);
+                body        = response.body().string();
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            JSONObject object = null;
-            object = new JSONObject(body);
+            JSONObject object   = null;
+            object              = new JSONObject(body);
             return (long) object.getInt("fee_per_kb");
         } catch (JSONException e) {
             e.printStackTrace();
@@ -201,7 +192,7 @@ public class APIClient {
         }
         if (ctx == null) ctx = HodlApp.getBreadContext();
         if (ctx == null) return null;
-        String strUtl = BASE_URL + ME;
+        String strUtl   = BASE_URL + ME;
         Request request = new Request.Builder()
                 .url(strUtl)
                 .get()
@@ -277,11 +268,11 @@ public class APIClient {
     }
 
     private String createRequest(String reqMethod, String base58Body, String contentType, String dateHeader, String url) {
-        return (reqMethod == null ? "" : reqMethod) + "\n" +
-                (base58Body == null ? "" : base58Body) + "\n" +
+        return  (reqMethod   == null ? "" : reqMethod)   + "\n" +
+                (base58Body  == null ? "" : base58Body)  + "\n" +
                 (contentType == null ? "" : contentType) + "\n" +
-                (dateHeader == null ? "" : dateHeader) + "\n" +
-                (url == null ? "" : url);
+                (dateHeader  == null ? "" : dateHeader)  + "\n" +
+                (url         == null ? "" : url);
     }
 
     public String signRequest(String request) {

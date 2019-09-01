@@ -3,9 +3,9 @@ package co.platform.tools;
 import android.content.Context;
 import android.util.Log;
 
-import co.hodlwallet.tools.crypto.CryptoHelper;
-import co.hodlwallet.tools.util.BRCompressor;
-import co.hodlwallet.tools.util.Utils;
+import co.pford.tools.crypto.CryptoHelper;
+import co.pford.tools.util.BRCompressor;
+import co.pford.tools.util.Utils;
 import co.platform.APIClient;
 import co.platform.entities.TxMetaData;
 import co.platform.entities.WalletInfo;

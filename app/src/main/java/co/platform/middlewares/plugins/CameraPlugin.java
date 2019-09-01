@@ -12,14 +12,14 @@ import android.support.v4.content.ContextCompat;
 import android.util.Base64;
 import android.util.Log;
 
-import co.hodlwallet.HodlApp;
-import co.hodlwallet.R;
-import co.hodlwallet.presenter.activities.camera.CameraActivity;
-import co.hodlwallet.presenter.customviews.BRDialogView;
-import co.hodlwallet.tools.animation.BRDialog;
-import co.hodlwallet.tools.crypto.CryptoHelper;
-import co.hodlwallet.tools.threads.BRExecutor;
-import co.hodlwallet.tools.util.BRConstants;
+import co.pford.HodlApp;
+import co.pford.R;
+import co.pford.presenter.activities.camera.CameraActivity;
+import co.pford.presenter.customviews.BRDialogView;
+import co.pford.tools.animation.BRDialog;
+import co.pford.tools.crypto.CryptoHelper;
+import co.pford.tools.threads.BRExecutor;
+import co.pford.tools.util.BRConstants;
 import co.platform.BRHTTPHelper;
 import co.platform.interfaces.Plugin;
 

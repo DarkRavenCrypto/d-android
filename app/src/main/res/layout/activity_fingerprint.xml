@@ -1,4 +1,4 @@
-<co.hodlwallet.presenter.customviews.BRRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<co.pford.presenter.customviews.BRRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
                                                         xmlns:app="http://schemas.android.com/apk/res-auto"
                                                         android:id="@+id/layout"
                                                         android:layout_width="match_parent"
@@ -27,7 +27,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
 
-            <co.hodlwallet.presenter.customviews.BRText
+            <co.pford.presenter.customviews.BRText
                 android:id="@+id/title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -59,7 +59,7 @@
 
     </LinearLayout>
 
-    <co.hodlwallet.presenter.customviews.BRText
+    <co.pford.presenter.customviews.BRText
         android:id="@+id/textView10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -71,7 +71,7 @@
         android:textColor="@color/white"
         android:textSize="@dimen/sub_header"/>
 
-    <co.hodlwallet.presenter.customviews.BRText
+    <co.pford.presenter.customviews.BRText
         android:id="@+id/enable_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -106,7 +106,7 @@
         android:layout_marginTop="16dp"
         android:background="@color/gray_border"/>
 
-    <co.hodlwallet.presenter.customviews.BRText
+    <co.pford.presenter.customviews.BRText
         android:id="@+id/limit_exchange"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -116,7 +116,7 @@
         android:textSize="18sp"
         />
 
-    <co.hodlwallet.presenter.customviews.BRText
+    <co.pford.presenter.customviews.BRText
         android:id="@+id/limit_info"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -128,4 +128,4 @@
         android:textColor="@color/white"
         android:textSize="@dimen/sub_header"/>
 
-</co.hodlwallet.presenter.customviews.BRRelativeLayout>
+</co.pford.presenter.customviews.BRRelativeLayout>

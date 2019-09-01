@@ -44,7 +44,7 @@
                 tools:layout_editor_absoluteX="0dp"
                 tools:layout_editor_absoluteY="81dp"/>
 
-            <co.hodlwallet.presenter.customviews.BRText
+            <co.pford.presenter.customviews.BRText
                 android:id="@+id/title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -88,7 +88,7 @@
             android:orientation="horizontal"
             android:weightSum="2">
 
-            <co.hodlwallet.presenter.customviews.BREdit
+            <co.pford.presenter.customviews.BREdit
                 android:id="@+id/address_edit"
                 android:layout_width="wrap_content"
                 android:layout_height="32dp"
@@ -173,7 +173,7 @@
             android:animateLayoutChanges="true"
             android:orientation="horizontal">
 
-            <co.hodlwallet.presenter.customviews.BRText
+            <co.pford.presenter.customviews.BRText
                 android:id="@+id/iso_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -187,7 +187,7 @@
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toTopOf="parent"/>
 
-            <co.hodlwallet.presenter.customviews.BREdit
+            <co.pford.presenter.customviews.BREdit
                 android:id="@+id/amount_edit"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -210,7 +210,7 @@
                 app:layout_constraintTop_toTopOf="@+id/iso_text"
                 app:layout_constraintVertical_bias="0.5"/>
 
-            <co.hodlwallet.presenter.customviews.BRText
+            <co.pford.presenter.customviews.BRText
                 android:id="@+id/iso_button_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -246,7 +246,7 @@
 
         </android.support.constraint.ConstraintLayout>
 
-        <co.hodlwallet.presenter.customviews.BRLinearLayoutWithCaret
+        <co.pford.presenter.customviews.BRLinearLayoutWithCaret
             xmlns:app="http://schemas.android.com/apk/res-auto"
             android:id="@+id/fee_buttons_layout"
             android:layout_width="match_parent"
@@ -263,7 +263,7 @@
                 android:background="@color/gray_border">
             </View>
 
-            <co.hodlwallet.presenter.customviews.BRText
+            <co.pford.presenter.customviews.BRText
                 android:id="@+id/balance_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -283,7 +283,7 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp">
 
-                <co.hodlwallet.presenter.customviews.BRText
+                <co.pford.presenter.customviews.BRText
                     android:id="@+id/fee_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -296,7 +296,7 @@
                     app:layout_constraintLeft_toLeftOf="parent"
                     />
 
-                <co.hodlwallet.presenter.customviews.BRText
+                <co.pford.presenter.customviews.BRText
                     android:id="@+id/confirm_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -316,7 +316,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp">
 
-                <co.hodlwallet.presenter.customviews.BRText
+                <co.pford.presenter.customviews.BRText
                     android:id="@+id/fee_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -329,7 +329,7 @@
                     app:layout_constraintLeft_toLeftOf="parent"
                     />
 
-                <co.hodlwallet.presenter.customviews.BRText
+                <co.pford.presenter.customviews.BRText
                     android:id="@+id/current_time"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -349,7 +349,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp">
 
-                <co.hodlwallet.presenter.customviews.BRText
+                <co.pford.presenter.customviews.BRText
                     android:id="@+id/economy"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -362,7 +362,7 @@
                     app:layout_constraintLeft_toLeftOf="parent"
                     />
 
-                <co.hodlwallet.presenter.customviews.BRText
+                <co.pford.presenter.customviews.BRText
                     android:id="@+id/normal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -377,7 +377,7 @@
                     app:layout_constraintRight_toRightOf="parent"
                     />
 
-                <co.hodlwallet.presenter.customviews.BRText
+                <co.pford.presenter.customviews.BRText
                     android:id="@+id/high"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -440,7 +440,7 @@
                 android:background="@color/gray_border"
                 />
 
-            <co.hodlwallet.presenter.customviews.BRButton
+            <co.pford.presenter.customviews.BRButton
                 android:id="@+id/custom_fee"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
@@ -451,7 +451,7 @@
                 />
 
 
-        </co.hodlwallet.presenter.customviews.BRLinearLayoutWithCaret>
+        </co.pford.presenter.customviews.BRLinearLayoutWithCaret>
 
         <View
             android:id="@+id/separator2"
@@ -466,14 +466,14 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <co.hodlwallet.presenter.customviews.BRKeyboard
+            <co.pford.presenter.customviews.BRKeyboard
                 android:id="@+id/keyboard"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/dark_gray"
                 >
 
-            </co.hodlwallet.presenter.customviews.BRKeyboard>
+            </co.pford.presenter.customviews.BRKeyboard>
 
             <View
                 android:id="@+id/separator3"
@@ -487,7 +487,7 @@
             android:layout_width="match_parent"
             android:layout_height="40dp">
 
-            <co.hodlwallet.presenter.customviews.BREdit
+            <co.pford.presenter.customviews.BREdit
                 android:id="@+id/comment_edit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -520,7 +520,7 @@
             android:background="@color/gray_background"
             />
 
-        <co.hodlwallet.presenter.customviews.BRButton
+        <co.pford.presenter.customviews.BRButton
             android:id="@+id/send_button"
             android:layout_width="match_parent"
             android:layout_height="80dp"

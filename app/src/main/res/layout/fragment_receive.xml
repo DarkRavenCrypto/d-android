@@ -28,7 +28,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <co.hodlwallet.presenter.customviews.BRText
+                <co.pford.presenter.customviews.BRText
                     android:id="@+id/title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -89,7 +89,7 @@
                 android:visibility="gone"
                 >
 
-                <co.hodlwallet.presenter.customviews.BRText
+                <co.pford.presenter.customviews.BRText
                     android:id="@+id/iso_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -99,7 +99,7 @@
                     android:textSize="28sp"
                     />
 
-                <co.hodlwallet.presenter.customviews.BREdit
+                <co.pford.presenter.customviews.BREdit
                     android:id="@+id/amount_edit"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -119,7 +119,7 @@
                     android:textSize="24sp"
                     />
 
-                <co.hodlwallet.presenter.customviews.BRText
+                <co.pford.presenter.customviews.BRText
                     android:id="@+id/iso_button_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -182,7 +182,7 @@
                 android:orientation="vertical"
                 android:visibility="gone">
 
-                <co.hodlwallet.presenter.customviews.BRKeyboard
+                <co.pford.presenter.customviews.BRKeyboard
                     android:id="@+id/keyboard"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -205,7 +205,7 @@
                 android:layout_weight="1"
                 android:src="@drawable/ic_check_mark_grey" />
 
-            <co.hodlwallet.presenter.customviews.BRText
+            <co.pford.presenter.customviews.BRText
                 android:id="@+id/address_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -217,7 +217,7 @@
                 android:textColor="@color/light_gray"
                 android:textSize="16sp" />
 
-            <co.hodlwallet.presenter.customviews.BRLinearLayoutWithCaret
+            <co.pford.presenter.customviews.BRLinearLayoutWithCaret
                 android:id="@+id/copied_layout"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
@@ -227,7 +227,7 @@
                 app:backgroundColor="@color/logo_gradient_start"
                 app:withStroke="false">
 
-                <co.hodlwallet.presenter.customviews.BRText
+                <co.pford.presenter.customviews.BRText
                     android:id="@+id/copied_view"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -238,9 +238,9 @@
                     android:text="@string/Receive.copied"
                     android:textColor="@color/white"
                     android:textSize="@dimen/paragraph" />
-            </co.hodlwallet.presenter.customviews.BRLinearLayoutWithCaret>
+            </co.pford.presenter.customviews.BRLinearLayoutWithCaret>
 
-            <co.hodlwallet.presenter.customviews.BRButton
+            <co.pford.presenter.customviews.BRButton
                 android:id="@+id/share_button"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/big_button_height"
@@ -255,7 +255,7 @@
                 app:isBreadButton="false"
                 />
 
-            <co.hodlwallet.presenter.customviews.BRButton
+            <co.pford.presenter.customviews.BRButton
                 android:id="@+id/request_button"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/big_button_height"

@@ -5,7 +5,7 @@
                 android:filterTouchesWhenObscured="true"
                 android:orientation="horizontal">
 
-    <co.hodlwallet.presenter.customviews.BRText
+    <co.pford.presenter.customviews.BRText
         android:id="@+id/word_button"
         android:layout_width="272dp"
         android:layout_height="64dp"

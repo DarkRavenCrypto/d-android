@@ -5,19 +5,19 @@ CINC_DIR=/usr/include
 
 JNI_LIB=libCore.jnilib
 
-JNI_SRCS=co_dogecwallet_core_BRCoreAddress.c \
-	co_dogecwallet_core_BRCoreChainParams.c \
-	co_dogecwallet_core_BRCoreJniReference.c \
-	co_dogecwallet_core_BRCoreKey.c \
-	co_dogecwallet_core_BRCoreMasterPubKey.c \
-	co_dogecwallet_core_BRCoreMerkleBlock.c \
-	co_dogecwallet_core_BRCorePaymentProtocol.c \
-	co_dogecwallet_core_BRCorePeer.c \
-	co_dogecwallet_core_BRCorePeerManager.c \
-	co_dogecwallet_core_BRCoreTransaction.c \
-	co_dogecwallet_core_BRCoreTransactionInput.c \
-	co_dogecwallet_core_BRCoreTransactionOutput.c \
-	co_dogecwallet_core_BRCoreWallet.c \
+JNI_SRCS=co_pford_core_BRCoreAddress.c \
+	co_pford_core_BRCoreChainParams.c \
+	co_pford_core_BRCoreJniReference.c \
+	co_pford_core_BRCoreKey.c \
+	co_pford_core_BRCoreMasterPubKey.c \
+	co_pford_core_BRCoreMerkleBlock.c \
+	co_pford_core_BRCorePaymentProtocol.c \
+	co_pford_core_BRCorePeer.c \
+	co_pford_core_BRCorePeerManager.c \
+	co_pford_core_BRCoreTransaction.c \
+	co_pford_core_BRCoreTransactionInput.c \
+	co_pford_core_BRCoreTransactionOutput.c \
+	co_pford_core_BRCoreWallet.c \
 	BRCoreJni.c
 
 JNI_OBJS=$(JNI_SRCS:.c=.o)
@@ -25,26 +25,26 @@ JNI_OBJS=$(JNI_SRCS:.c=.o)
 # JNI Header Files that we are interest in keeping (that are not empty)
 JNI_HDRS=$(JNI_SRCS:.c=.h)
 
-JAVA_SRCS=co/dogecwallet/core/BRCoreAddress.java \
-	co/dogecwallet/core/BRCoreChainParams.java \
-	co/dogecwallet/core/BRCoreJniReference.java \
-	co/dogecwallet/core/BRCoreKey.java \
-	co/dogecwallet/core/BRCoreMasterPubKey.java \
-	co/dogecwallet/core/BRCoreMerkleBlock.java \
-	co/dogecwallet/core/BRCorePaymentProtocolEncryptedMessage.java \
-	co/dogecwallet/core/BRCorePaymentProtocolInvoiceRequest.java \
-	co/dogecwallet/core/BRCorePaymentProtocolMessage.java \
-	co/dogecwallet/core/BRCorePaymentProtocolPayment.java \
-	co/dogecwallet/core/BRCorePaymentProtocolACK.java \
-	co/dogecwallet/core/BRCorePaymentProtocolRequest.java \
-	co/dogecwallet/core/BRCorePeer.java \
-	co/dogecwallet/core/BRCorePeerManager.java \
-	co/dogecwallet/core/BRCoreTransaction.java \
-	co/dogecwallet/core/BRCoreTransactionInput.java \
-	co/dogecwallet/core/BRCoreTransactionOutput.java \
-	co/dogecwallet/core/BRCoreWallet.java \
-	co/dogecwallet/core/BRCoreWalletManager.java \
-	co/dogecwallet/core/test/BRWalletManager.java
+JAVA_SRCS=co/pford/core/BRCoreAddress.java \
+	co/pford/core/BRCoreChainParams.java \
+	co/pford/core/BRCoreJniReference.java \
+	co/pford/core/BRCoreKey.java \
+	co/pford/core/BRCoreMasterPubKey.java \
+	co/pford/core/BRCoreMerkleBlock.java \
+	co/pford/core/BRCorePaymentProtocolEncryptedMessage.java \
+	co/pford/core/BRCorePaymentProtocolInvoiceRequest.java \
+	co/pford/core/BRCorePaymentProtocolMessage.java \
+	co/pford/core/BRCorePaymentProtocolPayment.java \
+	co/pford/core/BRCorePaymentProtocolACK.java \
+	co/pford/core/BRCorePaymentProtocolRequest.java \
+	co/pford/core/BRCorePeer.java \
+	co/pford/core/BRCorePeerManager.java \
+	co/pford/core/BRCoreTransaction.java \
+	co/pford/core/BRCoreTransactionInput.java \
+	co/pford/core/BRCoreTransactionOutput.java \
+	co/pford/core/BRCoreWallet.java \
+	co/pford/core/BRCoreWalletManager.java \
+	co/pford/core/test/BRWalletManager.java
 
 JAVA_OBJS=$(JAVA_SRCS:.java=.class)
 
@@ -81,12 +81,12 @@ compile: $(JNI_LIB) java_comp
 
 test: $(JNI_LIB) java_comp
 	java -Xss1m -Dwallet.test -classpath build -Djava.library.path=. \
-		 co.dogecwallet.core.test.BRWalletManager $(ARGS) # -D.
+		 co.pford.core.test.BRWalletManager $(ARGS) # -D.
 
 debug: $(JNI_LIB) java_comp
 	java -Xss1m -Xdebug -Xrunjdwp:transport=dt_socket,address=8008,server=y,suspend=n \
 		 -Dwallet.test -classpath build -Djava.library.path=. \
-		 co.dogecwallet.core.test.BRWalletManager $(ARGS) # -D.
+		 co.pford.core.test.BRWalletManager $(ARGS) # -D.
 
 $(JNI_LIB): $(JNI_OBJS) $(CORE_OBJS)
 	cc -dynamiclib -o $(JNI_LIB) $(JNI_OBJS) $(CORE_OBJS)
@@ -96,11 +96,11 @@ java_comp:	FORCE
 	javac -d build $(JAVA_SRCS)
 
 jni_hdr: java_comp
-	@(cd build/co/dogecwallet/core; \
+	@(cd build/co/pford/core; \
 	  for class in BRCore*.class; do \
-	      javah -jni -d $(DIR) -classpath $(DIR)/build co.dogecwallet.core.$${class%%.class}; \
+	      javah -jni -d $(DIR) -classpath $(DIR)/build co.pford.core.$${class%%.class}; \
 	  done)
-	@rm -f co_dogecwallet_core_BRCoreWalletManager.h co_dogecwallet_core_BRCore*_*.h .h
+	@rm -f co_pford_core_BRCoreWalletManager.h co_pford_core_BRCore*_*.h .h
 
 #            if [[ "$${class}" != "*\"$\"*" ]]; then
 #           fi
@@ -129,8 +129,8 @@ FORCE:
 #
 
 # (cd ${APP}/app/build/intermediates/classes/debug/com/hodlallet/core; for class in BRCore*.class; do \
-#     javah -jni -d ${APP}/app/src/main/jni/dogecwallet-core/Java/ \
+#     javah -jni -d ${APP}/app/src/main/jni/pford-core/Java/ \
 #	-classpath ${APP}/app/build/intermediates/classes/debug/ \
-#	co.dogecwallet.core.${class%%.class}; \
+#	co.pford.core.${class%%.class}; \
 #	done)
 # 15RBcXQMTfebbAfUFeBbcDfs1fVvPayWdU
