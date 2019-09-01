@@ -288,7 +288,7 @@ public class FragmentSend extends Fragment {
                     // Check if what changed is the content of the clipboard, we can assume that's a paste.
                     String clipboardContent = BRClipboardManager.getClipboard(getActivity());
                     if (clipboardContent.equals(s.toString())) {
-                        if (s.toString().startsWith("bitcoin:")) {
+                        if (s.toString().startsWith("nativecoin:")) {
                             Log.d(TAG, "afterTextChanged: Processing clipboard content: " + s.toString());
 
                             RequestObject obj = getRequestFromString(s.toString());
