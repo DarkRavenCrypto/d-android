@@ -37,7 +37,7 @@ public class BRCoreWalletManager implements
     BRCoreWallet.Listener {
 
     protected static boolean SHOW_CALLBACK = true;
-    protected static boolean SHOW_CALLBACK_DETAIL = false;
+    protected static boolean SHOW_CALLBACK_DETAIL = true;
 
     protected static boolean SHOW_CALLBACK_DETAIL_TX_STATUS = false;
     protected static boolean SHOW_CALLBACK_DETAIL_TX_IO = false;

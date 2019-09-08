@@ -27,11 +27,9 @@
 #include "BRPeerManager.h"
 #include "BRChainParams.h"
 
-#if BITCOIN_TESTNET
-#define BR_CHAIN_PARAMS BRTestNetParams
-#else
+
 #define BR_CHAIN_PARAMS BRMainNetParams
-#endif
+
 
 #ifndef BREADWALLET_PEERMANAGER_H
 #define BREADWALLET_PEERMANAGER_H

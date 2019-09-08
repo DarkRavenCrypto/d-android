@@ -1150,7 +1150,7 @@ uint64_t BRWalletMaxOutputAmount(BRWallet *wallet) {
 //            ! _BRWalletTxIsSend(wallet, tx)) cpfpSize += BRTransactionVSize(tx);
     }
 
-    txSize = BRTransactionVSize(tx);
+    txSize = 8 + BRVarIntSize(inCount) + TX_INPUT_SIZE*inCount + BRVarIntSize(2) + TX_OUTPUT_SIZE*2;
     fee = _txFee(wallet->feePerKb, txSize + cpfpSize);
     pthread_mutex_unlock(&wallet->lock);
 

@@ -2,7 +2,6 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion = 28
-    buildToolsVersion = '28.0.2'
     defaultConfig {
         testInstrumentationRunner = 'android.support.test.runner.AndroidJUnitRunner'
         applicationId = 'co.pford'
@@ -10,7 +9,7 @@ android {
         targetSdkVersion 28
         versionCode 1
         versionName "1.0.0"
-        multiDexEnabled false
+        multiDexEnabled true
 
         // Similar to other properties in the defaultConfig block,
         // you can configure the ndk block for each product flavor

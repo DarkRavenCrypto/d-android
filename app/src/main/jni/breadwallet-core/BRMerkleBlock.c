@@ -169,10 +169,10 @@ size_t BRMerkleBlockSerialize(const BRMerkleBlock *block, uint8_t *buf, size_t b
         off += sizeof(uint32_t);
         UInt32SetLE(&buf[off], block->nonce);
         off += sizeof(uint32_t);
-        if ( block->version > 3 ) {
-            UInt256Set(&buf[off], block->nAccumulatorCheckpoint);
-            off += sizeof(UInt256);
-        }
+//        if ( block->version > 3 ) {
+//            UInt256Set(&buf[off], block->nAccumulatorCheckpoint);
+//            off += sizeof(UInt256);
+//        }
         if (block->totalTx > 0) {
             UInt32SetLE(&buf[off], block->totalTx);
             off += sizeof(uint32_t);
