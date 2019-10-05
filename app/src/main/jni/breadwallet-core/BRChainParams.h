@@ -49,7 +49,8 @@ typedef struct {
 } BRChainParams;
 
 static const char *BRMainNetDNSSeeds[] = {
-    "seed1.n8vcoin.dev.", "seed2.n8vcoin.dev.", "seed3.n8vcoin.dev.", NULL
+    "45.77.235.152.", NULL
+    // "dnsseed.denarius.guide.", "dnsseed.denarius.pro.", "mseed.denarius.guide.", "bseed.denarius.guide.", NULL
 };
 
 static const char *BRTestNetDNSSeeds[] = {
@@ -59,18 +60,18 @@ static const char *BRTestNetDNSSeeds[] = {
 // blockchain checkpoints - these are also used as starting points for partial chain downloads, so they must be at
 // difficulty transition boundaries in order to verify the block difficulty at the immediately following transition
 static const BRCheckPoint BRMainNetCheckpoints[] = {
-    {      0, uint256("00000B7892E23DE3B819BB38f04CD3FF340E48AD7C379822A4ffA2b6A957EB9C"), 1559461295, 0x1e0ffff0 },
-    {    500, uint256("DF0A736659F6BB7C65422A1559209A2DB4DA065586650DE6251A1741A1BC2757"), 1559548330, 0x1c0475d2 },
-    {   1000, uint256("8D1287DCEFB1AA71BF6FA973A61F5A537D3BE41B06B4608F39414EE1958D6AAF"), 1559573493, 0x1a699a94 },
-    {   2500, uint256("064E52B7419CAAA307FF168B03CA00490B177CD2AB4263F96AA7ED28DE380AF3"), 1559663431, 0x1a4c4107 },
-    {   3000, uint256("89539BD72E124EE8DB9066B48682D2EBFB1AD3B610BB693E64A8400812AAD9CB"), 1559693565, 0x1a405b11 },
-    {   4500, uint256("DE3F9F382AAE8CFE690622E7DF066316A442AE7C6F794565647FF439A1588AA3"), 1559784659, 0x1a568dca },
-    {   6500, uint256("DCDAAA8DB9A24F0F2ED5FF0D112FD145EA3C3FDF6638039112151316E34DEA8D"), 1559906267, 0x1b00ce09 },
-    {   8500, uint256("748DD3C0FECC470694A6BC06DED92BD7EDBBE945081E2D10ACA5D16DDE9C7C47"), 1560026537, 0x1b00c62c },
-    {  10000, uint256("5BA8CC14AA4F92EA1E36B09657F6C7505CA89E43D2BD829AE88A49C370D23393"), 1560118025, 0x1b01e576 },
-    {  13500, uint256("4A5DE183340197B6993AD726A2606756AD01683A2A7A0C7488752C65E2F6E5A5"), 1560328467, 0x1b011d30 },
-    {  50000, uint256("f5d3c5033ad097f04da24e099449ac4f6e23d4295c648ac1b1aec17534e76943"), 1562535567, 0x1b013fe5 },
-    { 105000, uint256("b34a3274321df783d1364467097108527f1db8189f878f2de1a1ab52d0c7c60a"), 1565856101, 0x1b01f319 }
+    {      0, uint256("00000d5dbbda01621cfc16bbc1f9bf3264d641a5dbf0de89fd0182c2c4828fcd"), 1497476511, 0x1e0ffff0 },
+    // {    500, uint256("DF0A736659F6BB7C65422A1559209A2DB4DA065586650DE6251A1741A1BC2757"), 1559548330, 0x1c0475d2 },
+    // {   1000, uint256("8D1287DCEFB1AA71BF6FA973A61F5A537D3BE41B06B4608F39414EE1958D6AAF"), 1559573493, 0x1a699a94 },
+    // {   2500, uint256("064E52B7419CAAA307FF168B03CA00490B177CD2AB4263F96AA7ED28DE380AF3"), 1559663431, 0x1a4c4107 },
+    // {   3000, uint256("89539BD72E124EE8DB9066B48682D2EBFB1AD3B610BB693E64A8400812AAD9CB"), 1559693565, 0x1a405b11 },
+    // {   4500, uint256("DE3F9F382AAE8CFE690622E7DF066316A442AE7C6F794565647FF439A1588AA3"), 1559784659, 0x1a568dca },
+    // {   6500, uint256("DCDAAA8DB9A24F0F2ED5FF0D112FD145EA3C3FDF6638039112151316E34DEA8D"), 1559906267, 0x1b00ce09 },
+    // {   8500, uint256("748DD3C0FECC470694A6BC06DED92BD7EDBBE945081E2D10ACA5D16DDE9C7C47"), 1560026537, 0x1b00c62c },
+    // {  10000, uint256("5BA8CC14AA4F92EA1E36B09657F6C7505CA89E43D2BD829AE88A49C370D23393"), 1560118025, 0x1b01e576 },
+    // {  13500, uint256("4A5DE183340197B6993AD726A2606756AD01683A2A7A0C7488752C65E2F6E5A5"), 1560328467, 0x1b011d30 },
+    // {  50000, uint256("f5d3c5033ad097f04da24e099449ac4f6e23d4295c648ac1b1aec17534e76943"), 1562535567, 0x1b013fe5 },
+    // { 105000, uint256("b34a3274321df783d1364467097108527f1db8189f878f2de1a1ab52d0c7c60a"), 1565856101, 0x1b01f319 }
 };
 
 static const BRCheckPoint BRTestNetCheckpoints[] = {
@@ -101,9 +102,9 @@ static int BRTestNetVerifyDifficulty(const BRMerkleBlock *block, const BRSet *bl
 
 static const BRChainParams BRMainNetParams = {
     BRMainNetDNSSeeds,
-    8848,                  // standardPort
+    33369,                  // standardPort
     // 0xc02356a9          // magicNumber
-    0xa95623c0,            // magicNumber
+    0xb4eff2fa,            // magicNumber
     0,//SERVICES_NODE_WITNESS, // services
     BRMainNetVerifyDifficulty,
     BRMainNetCheckpoints,
@@ -112,9 +113,9 @@ static const BRChainParams BRMainNetParams = {
 
 static const BRChainParams BRTestNetParams = {
     BRMainNetDNSSeeds,
-    8848,                  // standardPort
+    33368,                  // standardPort
     // 0xc02356a9          // magicNumber
-    0xa95623c0,            // magicNumber
+    0xb4eff2fa,            // magicNumber
     0,//SERVICES_NODE_WITNESS, // services
     BRMainNetVerifyDifficulty,
     BRMainNetCheckpoints,

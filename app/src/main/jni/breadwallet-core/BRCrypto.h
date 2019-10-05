@@ -63,8 +63,8 @@ void BRKeccak256(void *md32, const void *data, size_t dataLen);
 // md5 - for non-cryptographic use only
 void BRMD5(void *md16, const void *data, size_t dataLen);
 //QuarkHash
-void BRQuark(const char* input, char* output);
-
+// void BRQuark(const char* input, char* output);
+void BRTribius(const char* pbegin, char* pend);
 // murmurHash3 (x86_32): https://code.google.com/p/smhasher/ - for non cryptographic use only
 uint32_t BRMurmur3_32(const void *data, size_t dataLen, uint32_t seed);
 

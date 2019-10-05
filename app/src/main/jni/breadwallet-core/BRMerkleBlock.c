@@ -134,8 +134,9 @@ BRMerkleBlock *BRMerkleBlockParse(const uint8_t *buf, size_t bufLen) {
             block->flags = (off + len <= bufLen) ? malloc(len) : NULL;
             if (block->flags) memcpy(block->flags, &buf[off], len);
         }
-        if ( block->version < 4 ) {
-            BRQuark(buf, &block->blockHash);       // hash function for block hash
+        if ( block->version < 6 ) {
+            // BRQuark(buf, &block->blockHash);       // hash function for block hash
+            BRTribius(buf, &block->blockHash);
         }
         else {
             BRSHA256_2(&block->blockHash, buf, 112);     // 80 + Uint256 nAccumulatorCheckpoint
